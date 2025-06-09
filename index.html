@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapori Autentici - Prodotti Tipici Italiani</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sapori Autentici - Prodotti Tipici Italiani dal 1950 | Made in Italy</title>
+    <meta name="description" content="Scopri i migliori prodotti tipici italiani: vini pregiati, formaggi artigianali, olio extravergine. Tradizione familiare dal 1950. Spedizione gratuita.">
+    <meta name="keywords" content="prodotti tipici italiani, made in italy, vini italiani, formaggi, olio extravergine, miele biologico">
+    <meta name="author" content="Sapori Autentici">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sapori Autentici - Prodotti Tipici Italiani">
+    <meta property="og:description" content="Tradizione italiana dal 1950. Vini, formaggi e specialità gastronomiche di qualità superiore.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saporiautentici.it">
+    <meta property="og:image" content="https://saporiautentici.it/assets/images/og-image.jpg">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sapori Autentici - Prodotti Tipici Italiani">
+    <meta name="twitter:description" content="Tradizione italiana dal 1950. Vini, formaggi e specialità gastronomiche di qualità superiore.">
+    <meta name="twitter:image" content="https://saporiautentici.it/assets/images/twitter-card.jpg">
+    
+    <!-- Preconnect for better performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <script>
         tailwind.config = {
             theme: {
@@ -98,118 +130,125 @@
             }
         }
     </script>
+    
+    <!-- Custom Styles -->
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #F5F5DC 0%, #FFFDD0 25%, #FDF5E6 50%, #FAF0E6 75%, #FFFFFF 100%);
+        /* =================================================================
+           SAPORI AUTENTICI - CUSTOM CSS
+           Organized sections for maintainability
+           ================================================================= */
+        
+        /* ===== ROOT VARIABLES ===== */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #F5F5DC;
+            --accent-color: #FFD700;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --shadow-light: 0 15px 50px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 25px 100px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
+            --border-radius: 0px;
+            --transition-fast: 0.3s ease;
+            --transition-slow: 0.6s ease;
         }
+        
+        /* ===== BASE STYLES ===== */
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #FFFDD0 25%, #FDF5E6 50%, #FAF0E6 75%, #FFFFFF 100%);
+        }
+        
         .glass-effect {
             background: rgba(245, 245, 220, 0.9);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
+        
+        .intense-blur {
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        
+        /* ===== INTERACTION EFFECTS ===== */
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform;
         }
+        
         .hover-lift:hover {
             transform: translateY(-20px) scale(1.05);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-heavy);
         }
+        
+        /* ===== SHADOWS ===== */
+        .elegant-shadow {
+            box-shadow: var(--shadow-light);
+        }
+        
+        .dramatic-shadow {
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        /* ===== TEXT EFFECTS ===== */
         .text-shadow {
             text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
         }
-        .premium-gradient {
-            background: linear-gradient(45deg, #F5F5DC, #000000, #F5F5DC, #000000);
-            background-size: 400% 400%;
-            animation: gradient-shift 6s ease infinite;
-        }
-        .shimmer-effect {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 3s infinite;
-        }
-        .luxury-border {
-            border: 3px solid;
-            border-image: linear-gradient(45deg, #000000, #F5F5DC, #000000) 1;
-        }
-        .elegant-shadow {
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .dramatic-shadow {
-            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+        
         .text-outline {
-            -webkit-text-stroke: 2px #000000;
-            text-stroke: 2px #000000;
+            -webkit-text-stroke: 2px var(--primary-color);
+            text-stroke: 2px var(--primary-color);
         }
+        
+        /* ===== BACKGROUND PATTERNS ===== */
         .bg-pattern {
             background-image: 
                 radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 2px, transparent 2px),
                 radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 2px, transparent 2px);
             background-size: 50px 50px;
         }
-        .intense-blur {
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-        }
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        
+        /* ===== PREMIUM EFFECTS ===== */
+        .premium-gradient {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color), var(--secondary-color), var(--primary-color));
+            background-size: 400% 400%;
+            animation: gradient-shift 6s ease infinite;
         }
         
-        /* Prevent horizontal overflow on mobile */
-        body {
-            overflow-x: hidden;
+        .shimmer-effect {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
         }
         
-        /* Enhanced mobile optimizations */
-        @media (max-width: 768px) {
-            /* Improve touch targets */
-            button, a {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            /* Better text rendering on mobile */
-            body {
-                -webkit-text-size-adjust: 100%;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            
-            /* Disable animations on mobile for better performance */
-            .animate-marquee,
-            .animate-marquee-reverse,
-            .float-intense {
-                animation: none !important;
-            }
-            
-            /* Improve form elements on mobile */
-            input, textarea, select {
-                font-size: 16px; /* Prevents zoom on iOS */
-            }
+        /* ===== BORDERS ===== */
+        .luxury-border {
+            border: 3px solid;
+            border-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color)) 1;
         }
-        @keyframes float-intense {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            33% { transform: translateY(-30px) rotate(5deg) scale(1.1); }
-            66% { transform: translateY(-15px) rotate(-3deg) scale(0.95); }
-        }
-        .float-intense {
-            animation: float-intense 8s ease-in-out infinite;
-        }
-        .organic-shape {
-            border-radius: 60% 40% 70% 30% / 60% 30% 70% 40%;
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .organic-shape:hover {
-            border-radius: 40% 60% 30% 70% / 40% 70% 30% 60%;
-            transform: scale(1.05) rotate(2deg);
-        }
+        
         .retro-border {
-            border: 4px solid #000000;
-            border-radius: 0px;
+            border: 4px solid var(--primary-color);
+            border-radius: var(--border-radius);
             position: relative;
         }
+        
         .retro-border:before {
             content: '';
             position: absolute;
@@ -217,20 +256,243 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            border: 2px solid #F5F5DC;
-            border-radius: 0px;
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            pointer-events: none;
+        }
+        /* ===== KEYFRAME ANIMATIONS ===== */
+        @keyframes gradient-shift {
+            0%, 100% { 
+                background-position: 0% 50%; 
+            }
+            50% { 
+                background-position: 100% 50%; 
+            }
+        }
+        
+        @keyframes float-intense {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+            }
+            33% { 
+                transform: translateY(-30px) rotate(5deg) scale(1.1); 
+            }
+            66% { 
+                transform: translateY(-15px) rotate(-3deg) scale(0.95); 
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { 
+                background-position: -200% 0; 
+            }
+            100% { 
+                background-position: 200% 0; 
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* ===== ANIMATION CLASSES ===== */
+        .float-intense {
+            animation: float-intense 8s ease-in-out infinite;
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        /* ===== SPECIAL SHAPES ===== */
+        .organic-shape {
+            border-radius: 60% 40% 70% 30% / 60% 30% 70% 40%;
+            transition: all var(--transition-slow) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .organic-shape:hover {
+            border-radius: 40% 60% 30% 70% / 40% 70% 30% 60%;
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            /* Performance optimizations for mobile */
+            .animate-marquee,
+            .animate-marquee-reverse,
+            .float-intense {
+                animation: none !important;
+            }
+            
+            /* Touch targets */
+            button, 
+            a, 
+            .hover-lift {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Form optimization */
+            input, 
+            textarea, 
+            select {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            /* Disable hover effects on touch devices */
+            .hover-lift:hover {
+                transform: none;
+                box-shadow: var(--shadow-light);
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            /* Respect user's motion preferences */
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ===== FOCUS STATES FOR ACCESSIBILITY ===== */
+        .focus\:ring-primary:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        .focus\:ring-accent:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
         }
     </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Sapori Autentici",
+        "alternateName": "Sapori Autentici - Prodotti Tipici Italiani",
+        "description": "Prodotti tipici italiani di alta qualità dal 1950. Vini pregiati, formaggi artigianali, olio extravergine e specialità gastronomiche made in Italy.",
+        "foundingDate": "1950",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Roma 123",
+            "addressLocality": "Roma",
+            "postalCode": "00100",
+            "addressCountry": "IT"
+        },
+        "telephone": "+39 06 1234567",
+        "email": "info@saporiautentici.it",
+        "url": "https://saporiautentici.it",
+        "logo": "https://saporiautentici.it/assets/images/logo.png",
+        "image": "https://saporiautentici.it/assets/images/hero-image.jpg",
+        "priceRange": "€€€",
+        "paymentAccepted": ["Cash", "Credit Card", "PayPal", "Bank Transfer"],
+        "servesCuisine": "Italian",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Prodotti Tipici Italiani",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Vini Pregiati Italiani",
+                        "category": "Wine"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Formaggi Artigianali",
+                        "category": "Cheese"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Olio Extravergine di Oliva",
+                        "category": "Oil"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://www.facebook.com/saporiautentici",
+            "https://www.instagram.com/saporiautentici",
+            "https://twitter.com/saporiautentici"
+        ]
+    }
+    </script>
 </head>
-<body class="font-sans">
+<body class="font-sans" itemscope itemtype="https://schema.org/WebPage">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-500" id="navbar" role="navigation" aria-label="Navigazione principale">
         <div class="container mx-auto px-4 lg:px-6 py-3 lg:py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded-full flex items-center justify-center retro-border">
-                        <span class="text-white text-lg lg:text-xl">🇮🇹</span>
+                <a href="#home" class="flex items-center space-x-3 focus:ring-primary" aria-label="Sapori Autentici - Torna alla homepage">
+                    <div class="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded-full flex items-center justify-center retro-border" role="img" aria-label="Logo Sapori Autentici">
+                        <span class="text-white text-lg lg:text-xl" aria-hidden="true">🇮🇹</span>
                     </div>
                     <div>
                         <div class="text-lg lg:text-2xl font-black text-black tracking-tight leading-none">
@@ -240,41 +502,47 @@
                             AUTENTICI
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="nav-link group relative">
-                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">HOME</span>
-                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
-                    </a>
-                    <a href="#products" class="nav-link group relative">
-                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">PRODOTTI</span>
-                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
-                    </a>
-                    <a href="#contact" class="nav-link group relative">
-                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">CONTATTI</span>
-                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
-                    </a>
-                </div>
+                <ul class="hidden lg:flex items-center space-x-8" role="menubar" aria-label="Menu principale">
+                    <li role="none">
+                        <a href="#home" class="nav-link group relative focus:ring-primary" role="menuitem">
+                            <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">HOME</span>
+                            <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300" aria-hidden="true"></div>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#products" class="nav-link group relative focus:ring-primary" role="menuitem">
+                            <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">PRODOTTI</span>
+                            <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300" aria-hidden="true"></div>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#contact" class="nav-link group relative focus:ring-primary" role="menuitem">
+                            <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">CONTATTI</span>
+                            <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300" aria-hidden="true"></div>
+                        </a>
+                    </li>
+                </ul>
 
                 <!-- CTA Buttons -->
                 <div class="hidden lg:flex items-center space-x-2">
                     <!-- Login/Register Button -->
-                    <button id="login-btn" class="retro-border bg-white text-black px-3 py-2 font-black text-xs tracking-wider hover:bg-gray-100 transition-all duration-300 uppercase hover:scale-105 elegant-shadow flex items-center space-x-1">
-                        <span class="text-sm">👤</span>
+                    <button id="login-btn" class="retro-border bg-white text-black px-3 py-2 font-black text-xs tracking-wider hover:bg-gray-100 transition-all duration-300 uppercase hover:scale-105 elegant-shadow flex items-center space-x-1 focus:ring-primary" aria-label="Accedi o registrati">
+                        <span class="text-sm" aria-hidden="true">👤</span>
                         <span>ACCEDI</span>
                     </button>
                     <!-- Purchase Button -->
-                    <button class="retro-border bg-black text-white px-4 py-2 font-black text-xs tracking-wider hover:bg-gray-900 transition-all duration-300 uppercase hover:scale-105 elegant-shadow">
+                    <button class="retro-border bg-black text-white px-4 py-2 font-black text-xs tracking-wider hover:bg-gray-900 transition-all duration-300 uppercase hover:scale-105 elegant-shadow focus:ring-accent" aria-label="Acquista prodotti ora">
                         ACQUISTA ORA
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden">
-                    <button id="mobile-menu-btn" class="w-10 h-10 bg-black flex items-center justify-center hover:bg-gray-900 transition-all duration-300 retro-border">
-                        <div class="w-5 h-5 relative">
+                    <button id="mobile-menu-btn" class="w-10 h-10 bg-black flex items-center justify-center hover:bg-gray-900 transition-all duration-300 retro-border focus:ring-accent" aria-label="Apri menu mobile" aria-expanded="false" aria-controls="mobile-menu">
+                        <div class="w-5 h-5 relative" aria-hidden="true">
                             <span class="hamburger-line absolute top-1 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
                             <span class="hamburger-line absolute top-2 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
                             <span class="hamburger-line absolute top-3 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
@@ -1078,379 +1346,698 @@
         <span class="text-xl md:text-2xl">↑</span>
     </button>
 
+    <!-- JavaScript Application -->
     <script>
-        // Enhanced navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            
-            if (window.scrollY > 30) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(20px)';
-                navbar.style.borderBottom = '2px solid #000000';
-                navbar.classList.add('elegant-shadow');
-                navbar.style.padding = '0.5rem 0';
-                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.6)';
-                navbar.style.backdropFilter = 'blur(15px)';
-                navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
-                navbar.classList.remove('elegant-shadow');
-                navbar.style.padding = '';
-                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+        /**
+         * =================================================================
+         * SAPORI AUTENTICI - MAIN APPLICATION SCRIPT
+         * Professional JavaScript implementation with error handling
+         * =================================================================
+         */
+
+        // Application Configuration
+        const AppConfig = {
+            selectors: {
+                navbar: '#navbar',
+                mobileMenuBtn: '#mobile-menu-btn',
+                mobileMenu: '#mobile-menu',
+                scrollToTop: '#scrollToTop',
+                newsletterForm: '#newsletter-form',
+                loginBtns: '#login-btn, #mobile-login-btn',
+                hamburgerLines: '.hamburger-line',
+                navLinks: 'a[href^="#"]',
+                hoverElements: '.hover-lift',
+                footerContactItems: 'footer .group.cursor-pointer',
+                footerLinks: 'footer a'
+            },
+            animations: {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px',
+                scrollThreshold: 30,
+                parallaxSpeed: 0.5,
+                rippleDuration: 600,
+                successMessageDuration: 3000,
+                errorMessageDuration: 2000
+            },
+            breakpoints: {
+                mobile: 768,
+                desktop: 1024
             }
-        });
-
-        // Mobile menu toggle with hamburger animation
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerLines = document.querySelectorAll('.hamburger-line');
-        let isMenuOpen = false;
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            isMenuOpen = !isMenuOpen;
-            mobileMenu.classList.toggle('hidden');
-            
-            if (isMenuOpen) {
-                // Transform to X (adjusted for smaller hamburger)
-                hamburgerLines[0].style.transform = 'rotate(45deg) translate(2px, 2px)';
-                hamburgerLines[1].style.opacity = '0';
-                hamburgerLines[2].style.transform = 'rotate(-45deg) translate(3px, -2px)';
-                mobileMenuBtn.style.backgroundColor = '#374151';
-            } else {
-                // Back to hamburger
-                hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
-                hamburgerLines[1].style.opacity = '1';
-                hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
-                mobileMenuBtn.style.backgroundColor = '#000000';
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        isMenuOpen = false;
-                        // Reset hamburger
-                        hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
-                        hamburgerLines[1].style.opacity = '1';
-                        hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
-                    }
-                }
-            });
-        });
-
-        // Scroll to top functionality
-        document.getElementById('scrollToTop').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
+        // Utility Functions
+        const Utils = {
+            /**
+             * Safe DOM query selector with error handling
+             */
+            safeQuery: (selector, context = document) => {
+                try {
+                    return context.querySelector(selector);
+                } catch (error) {
+                    console.warn(`SafeQuery failed for selector: ${selector}`, error);
+                    return null;
                 }
-            });
-        }, observerOptions);
+            },
 
-        // Observe elements for animation
-        document.querySelectorAll('section > div > div').forEach(el => {
-            observer.observe(el);
-        });
+            /**
+             * Safe DOM query selector all with error handling
+             */
+            safeQueryAll: (selector, context = document) => {
+                try {
+                    return context.querySelectorAll(selector);
+                } catch (error) {
+                    console.warn(`SafeQueryAll failed for selector: ${selector}`, error);
+                    return [];
+                }
+            },
 
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('#home');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-
-        // Product hover effects
-        document.querySelectorAll('.hover-lift').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Enhanced newsletter form submission
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterBtn = newsletterForm.querySelector('button');
-        const newsletterInput = newsletterForm.querySelector('input[type="email"]');
-        
-        newsletterBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const email = newsletterInput.value;
-            if (email && email.includes('@')) {
-                // Success animation
-                newsletterBtn.innerHTML = '<span class="animate-pulse">✅ ISCRITTO!</span>';
-                newsletterBtn.classList.add('bg-green-500', 'text-white');
-                newsletterInput.value = '';
-                
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    newsletterBtn.innerHTML = '<span>ISCRIVITI</span>';
-                    newsletterBtn.classList.remove('bg-green-500', 'text-white');
-                }, 3000);
-            } else {
-                // Error animation
-                newsletterInput.classList.add('ring-red-500', 'ring-4');
-                newsletterInput.placeholder = 'EMAIL NON VALIDA!';
-                
-                setTimeout(() => {
-                    newsletterInput.classList.remove('ring-red-500', 'ring-4');
-                    newsletterInput.placeholder = 'LA TUA EMAIL';
-                }, 2000);
-            }
-        });
-
-        // Footer contact items click effects
-        document.querySelectorAll('footer .group.cursor-pointer').forEach(item => {
-            item.addEventListener('click', function() {
-                // Add a click ripple effect
-                const ripple = document.createElement('div');
-                ripple.className = 'absolute inset-0 bg-black opacity-20 rounded animate-ping';
-                this.style.position = 'relative';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    if (ripple.parentNode) {
-                        ripple.parentNode.removeChild(ripple);
+            /**
+             * Throttle function for performance optimization
+             */
+            throttle: (func, delay) => {
+                let timeoutId;
+                let lastExecTime = 0;
+                return function (...args) {
+                    const currentTime = Date.now();
+                    if (currentTime - lastExecTime > delay) {
+                        func.apply(this, args);
+                        lastExecTime = currentTime;
+                    } else {
+                        clearTimeout(timeoutId);
+                        timeoutId = setTimeout(() => {
+                            func.apply(this, args);
+                            lastExecTime = Date.now();
+                        }, delay - (currentTime - lastExecTime));
                     }
-                }, 600);
-            });
-        });
+                };
+            },
 
-        // Footer links hover sound effect simulation
-        document.querySelectorAll('footer a').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                // Add hover feedback
-                this.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.textShadow = 'none';
-            });
-        });
+            /**
+             * Debounce function for performance optimization
+             */
+            debounce: (func, delay) => {
+                let timeoutId;
+                return function (...args) {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => func.apply(this, args), delay);
+                };
+            },
 
-        // Initialize navbar
-        const navbar = document.getElementById('navbar');
-        navbar.style.background = 'rgba(255, 255, 255, 0.6)';
-        navbar.style.backdropFilter = 'blur(15px)';
-        navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
-        
-        // Add responsive behavior for navbar height
-        function adjustNavbarHeight() {
-            const isMobile = window.innerWidth < 1024;
-            if (isMobile) {
-                navbar.style.minHeight = '4rem';
-            } else {
-                navbar.style.minHeight = '5rem';
+            /**
+             * Email validation
+             */
+            isValidEmail: (email) => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            },
+
+            /**
+             * Create safe HTML element
+             */
+            createElement: (tag, className = '', innerHTML = '') => {
+                const element = document.createElement(tag);
+                if (className) element.className = className;
+                if (innerHTML) element.innerHTML = innerHTML;
+                return element;
             }
-        }
-        
-        // Initial call and listener for resize
-        adjustNavbarHeight();
-        window.addEventListener('resize', adjustNavbarHeight);
+        };
 
-        // Login/Register functionality
-        const loginBtns = document.querySelectorAll('#login-btn, #mobile-login-btn');
-        let currentUserState = null;
+        // Navigation Manager
+        const NavigationManager = {
+            navbar: null,
+            mobileMenuBtn: null,
+            mobileMenu: null,
+            hamburgerLines: null,
+            isMenuOpen: false,
 
-        // Create login modal
-        function createLoginModal() {
-            const modal = document.createElement('div');
-            modal.id = 'login-modal';
-            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden';
-            modal.innerHTML = `
-                <div class="bg-white retro-border p-8 max-w-md w-full mx-4 relative">
-                    <button id="close-modal" class="absolute top-4 right-4 text-2xl hover:text-gray-700 transition-colors">×</button>
-                    <div class="text-center mb-6">
-                        <div class="text-4xl mb-4">👤</div>
-                        <h2 class="text-2xl font-black uppercase tracking-wider" id="modal-title">ACCEDI</h2>
-                    </div>
+            init() {
+                try {
+                    this.navbar = Utils.safeQuery(AppConfig.selectors.navbar);
+                    this.mobileMenuBtn = Utils.safeQuery(AppConfig.selectors.mobileMenuBtn);
+                    this.mobileMenu = Utils.safeQuery(AppConfig.selectors.mobileMenu);
+                    this.hamburgerLines = Utils.safeQueryAll(AppConfig.selectors.hamburgerLines);
+
+                    if (!this.navbar || !this.mobileMenuBtn || !this.mobileMenu) {
+                        throw new Error('Required navigation elements not found');
+                    }
+
+                    this.setupEventListeners();
+                    this.initializeNavbar();
+                    this.setupScrollHandler();
+                    this.setupSmoothScrolling();
+                } catch (error) {
+                    console.error('NavigationManager initialization failed:', error);
+                }
+            },
+
+            setupEventListeners() {
+                // Mobile menu toggle
+                this.mobileMenuBtn.addEventListener('click', () => this.toggleMobileMenu());
+                
+                // Update ARIA attribute
+                this.mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            },
+
+            toggleMobileMenu() {
+                try {
+                    this.isMenuOpen = !this.isMenuOpen;
+                    this.mobileMenu.classList.toggle('hidden');
+                    this.mobileMenuBtn.setAttribute('aria-expanded', this.isMenuOpen.toString());
+
+                    if (this.isMenuOpen) {
+                        this.animateToX();
+                    } else {
+                        this.animateToHamburger();
+                    }
+                } catch (error) {
+                    console.error('Mobile menu toggle failed:', error);
+                }
+            },
+
+            animateToX() {
+                if (this.hamburgerLines.length >= 3) {
+                    this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(2px, 2px)';
+                    this.hamburgerLines[1].style.opacity = '0';
+                    this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(3px, -2px)';
+                    this.mobileMenuBtn.style.backgroundColor = '#374151';
+                }
+            },
+
+            animateToHamburger() {
+                if (this.hamburgerLines.length >= 3) {
+                    this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+                    this.hamburgerLines[1].style.opacity = '1';
+                    this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+                    this.mobileMenuBtn.style.backgroundColor = '#000000';
+                }
+            },
+
+            setupScrollHandler() {
+                const scrollToTopBtn = Utils.safeQuery(AppConfig.selectors.scrollToTop);
+                
+                const handleScroll = Utils.throttle(() => {
+                    const scrollY = window.scrollY;
+                    const isScrolled = scrollY > AppConfig.animations.scrollThreshold;
+
+                    this.updateNavbarAppearance(isScrolled);
+                    this.updateScrollToTopButton(scrollToTopBtn, isScrolled);
+                }, 16); // ~60fps
+
+                window.addEventListener('scroll', handleScroll, { passive: true });
+            },
+
+            updateNavbarAppearance(isScrolled) {
+                if (isScrolled) {
+                    Object.assign(this.navbar.style, {
+                        background: 'rgba(255, 255, 255, 0.95)',
+                        backdropFilter: 'blur(20px)',
+                        borderBottom: '2px solid #000000',
+                        padding: '0.5rem 0'
+                    });
+                    this.navbar.classList.add('elegant-shadow');
+                } else {
+                    Object.assign(this.navbar.style, {
+                        background: 'rgba(255, 255, 255, 0.6)',
+                        backdropFilter: 'blur(15px)',
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
+                        padding: ''
+                    });
+                    this.navbar.classList.remove('elegant-shadow');
+                }
+            },
+
+            updateScrollToTopButton(button, isScrolled) {
+                if (button) {
+                    button.classList.toggle('opacity-0', !isScrolled);
+                    button.classList.toggle('invisible', !isScrolled);
+                }
+            },
+
+            initializeNavbar() {
+                Object.assign(this.navbar.style, {
+                    background: 'rgba(255, 255, 255, 0.6)',
+                    backdropFilter: 'blur(15px)',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.05)'
+                });
+
+                // Responsive navbar height
+                const adjustHeight = () => {
+                    const isMobile = window.innerWidth < AppConfig.breakpoints.desktop;
+                    this.navbar.style.minHeight = isMobile ? '4rem' : '5rem';
+                };
+
+                adjustHeight();
+                window.addEventListener('resize', Utils.debounce(adjustHeight, 250));
+            },
+
+            setupSmoothScrolling() {
+                Utils.safeQueryAll(AppConfig.selectors.navLinks).forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = anchor.getAttribute('href');
+                        const target = Utils.safeQuery(targetId);
+
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+
+                            // Close mobile menu if open
+                            if (this.isMenuOpen) {
+                                this.toggleMobileMenu();
+                            }
+                        }
+                    });
+                });
+            }
+        };
+
+        // Scroll Manager
+        const ScrollManager = {
+            init() {
+                this.setupScrollToTop();
+                this.setupParallaxEffect();
+            },
+
+            setupScrollToTop() {
+                const scrollToTopBtn = Utils.safeQuery(AppConfig.selectors.scrollToTop);
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            },
+
+            setupParallaxEffect() {
+                const heroSection = Utils.safeQuery('#home');
+                if (!heroSection) return;
+
+                const handleParallax = Utils.throttle(() => {
+                    const scrolled = window.pageYOffset;
+                    const speed = scrolled * AppConfig.animations.parallaxSpeed;
+                    heroSection.style.transform = `translateY(${speed}px)`;
+                }, 16);
+
+                window.addEventListener('scroll', handleParallax, { passive: true });
+            }
+        };
+
+        // Animation Manager
+        const AnimationManager = {
+            init() {
+                this.setupIntersectionObserver();
+                this.setupHoverEffects();
+            },
+
+            setupIntersectionObserver() {
+                if (!('IntersectionObserver' in window)) {
+                    console.warn('IntersectionObserver not supported');
+                    return;
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-fade-in-up');
+                        }
+                    });
+                }, {
+                    threshold: AppConfig.animations.threshold,
+                    rootMargin: AppConfig.animations.rootMargin
+                });
+
+                Utils.safeQueryAll('section > div > div').forEach(el => {
+                    observer.observe(el);
+                });
+            },
+
+            setupHoverEffects() {
+                Utils.safeQueryAll(AppConfig.selectors.hoverElements).forEach(element => {
+                    element.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
                     
-                    <div id="login-form">
-                        <div class="space-y-4">
-                            <input type="email" id="email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <input type="password" id="password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <button id="login-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
-                                ACCEDI
-                            </button>
-                            <button id="switch-to-register" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider">
-                                NON HAI UN ACCOUNT? REGISTRATI
-                            </button>
+                    element.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+            }
+        };
+
+        // Newsletter Manager
+        const NewsletterManager = {
+            form: null,
+            button: null,
+            input: null,
+
+            init() {
+                try {
+                    this.form = Utils.safeQuery(AppConfig.selectors.newsletterForm);
+                    if (!this.form) return;
+
+                    this.button = this.form.querySelector('button');
+                    this.input = this.form.querySelector('input[type="email"]');
+
+                    if (this.button && this.input) {
+                        this.setupEventListeners();
+                    }
+                } catch (error) {
+                    console.error('NewsletterManager initialization failed:', error);
+                }
+            },
+
+            setupEventListeners() {
+                this.button.addEventListener('click', (e) => this.handleSubmission(e));
+            },
+
+            handleSubmission(e) {
+                e.preventDefault();
+                const email = this.input.value.trim();
+
+                if (this.validateEmail(email)) {
+                    this.showSuccess();
+                } else {
+                    this.showError();
+                }
+            },
+
+            validateEmail(email) {
+                return email && Utils.isValidEmail(email);
+            },
+
+            showSuccess() {
+                this.button.innerHTML = '<span class="animate-pulse">✅ ISCRITTO!</span>';
+                this.button.classList.add('bg-green-500', 'text-white');
+                this.input.value = '';
+
+                setTimeout(() => {
+                    this.button.innerHTML = '<span>ISCRIVITI</span>';
+                    this.button.classList.remove('bg-green-500', 'text-white');
+                }, AppConfig.animations.successMessageDuration);
+            },
+
+            showError() {
+                this.input.classList.add('ring-red-500', 'ring-4');
+                const originalPlaceholder = this.input.placeholder;
+                this.input.placeholder = 'EMAIL NON VALIDA!';
+
+                setTimeout(() => {
+                    this.input.classList.remove('ring-red-500', 'ring-4');
+                    this.input.placeholder = originalPlaceholder;
+                }, AppConfig.animations.errorMessageDuration);
+            }
+        };
+
+        // User Authentication Manager
+        const AuthManager = {
+            currentUser: null,
+            modal: null,
+            loginButtons: null,
+
+            init() {
+                try {
+                    this.loginButtons = Utils.safeQueryAll(AppConfig.selectors.loginBtns);
+                    this.createModal();
+                    this.setupEventListeners();
+                } catch (error) {
+                    console.error('AuthManager initialization failed:', error);
+                }
+            },
+
+            createModal() {
+                this.modal = Utils.createElement('div', 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden', `
+                    <div class="bg-white retro-border p-8 max-w-md w-full mx-4 relative" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+                        <button id="close-modal" class="absolute top-4 right-4 text-2xl hover:text-gray-700 transition-colors focus:ring-primary" aria-label="Chiudi finestra">×</button>
+                        <div class="text-center mb-6">
+                            <div class="text-4xl mb-4" aria-hidden="true">👤</div>
+                            <h2 class="text-2xl font-black uppercase tracking-wider" id="modal-title">ACCEDI</h2>
+                        </div>
+                        
+                        <div id="login-form">
+                            <div class="space-y-4">
+                                <input type="email" id="email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Indirizzo email" required>
+                                <input type="password" id="password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Password" required>
+                                <button id="login-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300 focus:ring-accent">
+                                    ACCEDI
+                                </button>
+                                <button id="switch-to-register" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider focus:ring-primary">
+                                    NON HAI UN ACCOUNT? REGISTRATI
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="register-form" class="hidden">
+                            <div class="space-y-4">
+                                <input type="text" id="reg-name" placeholder="NOME COMPLETO" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Nome completo" required>
+                                <input type="email" id="reg-email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Indirizzo email" required>
+                                <input type="password" id="reg-password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Password" required minlength="6">
+                                <input type="password" id="reg-confirm" placeholder="CONFERMA PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black" aria-label="Conferma password" required>
+                                <button id="register-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300 focus:ring-accent">
+                                    REGISTRATI
+                                </button>
+                                <button id="switch-to-login" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider focus:ring-primary">
+                                    HAI GIÀ UN ACCOUNT? ACCEDI
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div id="register-form" class="hidden">
-                        <div class="space-y-4">
-                            <input type="text" id="reg-name" placeholder="NOME COMPLETO" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <input type="email" id="reg-email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <input type="password" id="reg-password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <input type="password" id="reg-confirm" placeholder="CONFERMA PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
-                            <button id="register-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
-                                REGISTRATI
-                            </button>
-                            <button id="switch-to-login" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider">
-                                HAI GIÀ UN ACCOUNT? ACCEDI
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            return modal;
-        }
+                `);
+                
+                this.modal.id = 'login-modal';
+                document.body.appendChild(this.modal);
+            },
 
-        const modal = createLoginModal();
+            setupEventListeners() {
+                // Login button clicks
+                this.loginButtons.forEach(btn => {
+                    btn.addEventListener('click', () => this.handleLoginClick());
+                });
 
-        // Modal controls
-        function showModal() {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+                // Modal controls
+                const closeBtn = Utils.safeQuery('#close-modal');
+                const switchToRegister = Utils.safeQuery('#switch-to-register');
+                const switchToLogin = Utils.safeQuery('#switch-to-login');
+                const loginSubmit = Utils.safeQuery('#login-submit');
+                const registerSubmit = Utils.safeQuery('#register-submit');
 
-        function hideModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
+                if (closeBtn) closeBtn.addEventListener('click', () => this.hideModal());
+                if (switchToRegister) switchToRegister.addEventListener('click', () => this.switchToRegister());
+                if (switchToLogin) switchToLogin.addEventListener('click', () => this.switchToLogin());
+                if (loginSubmit) loginSubmit.addEventListener('click', (e) => this.handleLogin(e));
+                if (registerSubmit) registerSubmit.addEventListener('click', (e) => this.handleRegister(e));
 
-        function switchToRegister() {
-            document.getElementById('login-form').classList.add('hidden');
-            document.getElementById('register-form').classList.remove('hidden');
-            document.getElementById('modal-title').textContent = 'REGISTRATI';
-        }
+                // Close modal on outside click
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) {
+                        this.hideModal();
+                    }
+                });
 
-        function switchToLogin() {
-            document.getElementById('register-form').classList.add('hidden');
-            document.getElementById('login-form').classList.remove('hidden');
-            document.getElementById('modal-title').textContent = 'ACCEDI';
-        }
+                // Escape key to close modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) {
+                        this.hideModal();
+                    }
+                });
+            },
 
-        function updateUserState(user) {
-            currentUserState = user;
-            const greeting = `Ciao, ${user.name}! 👋`;
-            
-                         // Update desktop button
-             document.getElementById('login-btn').innerHTML = '<span class="text-sm">👤</span><span>CIAO, ' + user.name.toUpperCase() + '</span>';
-             
-             // Update mobile button
-             document.getElementById('mobile-login-btn').innerHTML = '<span class="text-xl">👤</span><span>CIAO, ' + user.name.toUpperCase() + '</span>';
-            
-                         // Show success message
-             setTimeout(() => {
-                 alert('Benvenuto, ' + user.name + '! Sei ora connesso a Sapori Autentici 🇮🇹');
-             }, 500);
-        }
-
-        // Event listeners
-        loginBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                                 if (currentUserState) {
-                     // User logged in - show profile or logout
-                     const action = confirm('Ciao ' + currentUserState.name + '! Vuoi disconnetterti?');
-                     if (action) {
-                                                 currentUserState = null;
-                         document.getElementById('login-btn').innerHTML = '<span class="text-sm">👤</span><span>ACCEDI</span>';
-                         document.getElementById('mobile-login-btn').innerHTML = '<span class="text-xl">👤</span><span>ACCEDI / REGISTRATI</span>';
-                         alert('Arrivederci! Sei stato disconnesso.');
+            handleLoginClick() {
+                if (this.currentUser) {
+                    const shouldLogout = confirm(`Ciao ${this.currentUser.name}! Vuoi disconnetterti?`);
+                    if (shouldLogout) {
+                        this.logout();
                     }
                 } else {
-                    showModal();
+                    this.showModal();
                 }
-            });
-        });
+            },
 
-        document.getElementById('close-modal').addEventListener('click', hideModal);
-        document.getElementById('switch-to-register').addEventListener('click', switchToRegister);
-        document.getElementById('switch-to-login').addEventListener('click', switchToLogin);
+            showModal() {
+                this.modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Focus first input
+                setTimeout(() => {
+                    const firstInput = this.modal.querySelector('input');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            },
 
-        // Login functionality
-        document.getElementById('login-submit').addEventListener('click', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            if (email && password) {
-                if (email.includes('@')) {
-                    const userName = email.split('@')[0];
-                    updateUserState({ name: userName, email: email });
-                    hideModal();
-                    // Clear form
-                    document.getElementById('email').value = '';
-                    document.getElementById('password').value = '';
-                } else {
-                    alert('Inserisci un indirizzo email valido!');
+            hideModal() {
+                this.modal.classList.add('hidden');
+                document.body.style.overflow = '';
+                this.clearForms();
+            },
+
+            switchToRegister() {
+                Utils.safeQuery('#login-form').classList.add('hidden');
+                Utils.safeQuery('#register-form').classList.remove('hidden');
+                Utils.safeQuery('#modal-title').textContent = 'REGISTRATI';
+            },
+
+            switchToLogin() {
+                Utils.safeQuery('#register-form').classList.add('hidden');
+                Utils.safeQuery('#login-form').classList.remove('hidden');
+                Utils.safeQuery('#modal-title').textContent = 'ACCEDI';
+            },
+
+            handleLogin(e) {
+                e.preventDefault();
+                const email = Utils.safeQuery('#email').value.trim();
+                const password = Utils.safeQuery('#password').value;
+
+                if (!email || !password) {
+                    alert('Compila tutti i campi!');
+                    return;
                 }
-            } else {
-                alert('Compila tutti i campi!');
-            }
-        });
 
-        // Register functionality
-        document.getElementById('register-submit').addEventListener('click', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('reg-name').value;
-            const email = document.getElementById('reg-email').value;
-            const password = document.getElementById('reg-password').value;
-            const confirm = document.getElementById('reg-confirm').value;
-            
-            if (name && email && password && confirm) {
-                if (!email.includes('@')) {
+                if (!Utils.isValidEmail(email)) {
                     alert('Inserisci un indirizzo email valido!');
                     return;
                 }
+
+                const userName = email.split('@')[0];
+                this.login({ name: userName, email: email });
+            },
+
+            handleRegister(e) {
+                e.preventDefault();
+                const name = Utils.safeQuery('#reg-name').value.trim();
+                const email = Utils.safeQuery('#reg-email').value.trim();
+                const password = Utils.safeQuery('#reg-password').value;
+                const confirm = Utils.safeQuery('#reg-confirm').value;
+
+                if (!name || !email || !password || !confirm) {
+                    alert('Compila tutti i campi!');
+                    return;
+                }
+
+                if (!Utils.isValidEmail(email)) {
+                    alert('Inserisci un indirizzo email valido!');
+                    return;
+                }
+
                 if (password !== confirm) {
                     alert('Le password non coincidono!');
                     return;
                 }
+
                 if (password.length < 6) {
                     alert('La password deve essere di almeno 6 caratteri!');
                     return;
                 }
-                
-                updateUserState({ name: name, email: email });
-                hideModal();
-                
-                // Clear form
-                document.getElementById('reg-name').value = '';
-                document.getElementById('reg-email').value = '';
-                document.getElementById('reg-password').value = '';
-                document.getElementById('reg-confirm').value = '';
-            } else {
-                alert('Compila tutti i campi!');
-            }
-        });
 
-        // Close modal on outside click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                hideModal();
+                this.login({ name: name, email: email });
+            },
+
+            login(user) {
+                this.currentUser = user;
+                this.updateUI();
+                this.hideModal();
+                
+                setTimeout(() => {
+                    alert(`Benvenuto, ${user.name}! Sei ora connesso a Sapori Autentici 🇮🇹`);
+                }, 500);
+            },
+
+            logout() {
+                this.currentUser = null;
+                this.updateUI();
+                alert('Arrivederci! Sei stato disconnesso.');
+            },
+
+            updateUI() {
+                const desktopBtn = Utils.safeQuery('#login-btn');
+                const mobileBtn = Utils.safeQuery('#mobile-login-btn');
+
+                if (this.currentUser) {
+                    const userName = this.currentUser.name.toUpperCase();
+                    if (desktopBtn) desktopBtn.innerHTML = `<span class="text-sm" aria-hidden="true">👤</span><span>CIAO, ${userName}</span>`;
+                    if (mobileBtn) mobileBtn.innerHTML = `<span class="text-xl" aria-hidden="true">👤</span><span>CIAO, ${userName}</span>`;
+                } else {
+                    if (desktopBtn) desktopBtn.innerHTML = '<span class="text-sm" aria-hidden="true">👤</span><span>ACCEDI</span>';
+                    if (mobileBtn) mobileBtn.innerHTML = '<span class="text-xl" aria-hidden="true">👤</span><span>ACCEDI / REGISTRATI</span>';
+                }
+            },
+
+            clearForms() {
+                const inputs = this.modal.querySelectorAll('input');
+                inputs.forEach(input => input.value = '');
             }
-        });
+        };
+
+        // Footer Effects Manager
+        const FooterManager = {
+            init() {
+                this.setupContactItemEffects();
+                this.setupLinkHoverEffects();
+            },
+
+            setupContactItemEffects() {
+                Utils.safeQueryAll(AppConfig.selectors.footerContactItems).forEach(item => {
+                    item.addEventListener('click', function() {
+                        const ripple = Utils.createElement('div', 'absolute inset-0 bg-black opacity-20 rounded animate-ping');
+                        this.style.position = 'relative';
+                        this.appendChild(ripple);
+
+                        setTimeout(() => {
+                            if (ripple.parentNode) {
+                                ripple.parentNode.removeChild(ripple);
+                            }
+                        }, AppConfig.animations.rippleDuration);
+                    });
+                });
+            },
+
+            setupLinkHoverEffects() {
+                Utils.safeQueryAll(AppConfig.selectors.footerLinks).forEach(link => {
+                    link.addEventListener('mouseenter', function() {
+                        this.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+                    });
+
+                    link.addEventListener('mouseleave', function() {
+                        this.style.textShadow = 'none';
+                    });
+                });
+            }
+        };
+
+        // Application Initializer
+        const App = {
+            init() {
+                // Wait for DOM to be ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => this.startApp());
+                } else {
+                    this.startApp();
+                }
+            },
+
+            startApp() {
+                try {
+                    console.log('🇮🇹 Sapori Autentici - Application Starting...');
+                    
+                    // Initialize all managers
+                    NavigationManager.init();
+                    ScrollManager.init();
+                    AnimationManager.init();
+                    NewsletterManager.init();
+                    AuthManager.init();
+                    FooterManager.init();
+
+                    console.log('✅ Sapori Autentici - Application Ready!');
+                } catch (error) {
+                    console.error('❌ Application initialization failed:', error);
+                }
+            }
+        };
+
+        // Start the application
+        App.init();
     </script>
 </body>
 </html>
