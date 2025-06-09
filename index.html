@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapori Autentici - Prodotti Tipici Italiani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FFFEF7',
+                            100: '#FFFBEA',
+                            200: '#FFF4D1',
+                            300: '#FFECB8',
+                            400: '#FFE49F',
+                            500: '#F5DEB3',
+                            600: '#DEB887',
+                            700: '#D2B48C',
+                            800: '#BC9A6A',
+                            900: '#8B7355'
+                        },
+                        gold: {
+                            50: '#FFFDF7',
+                            100: '#FFF9E6',
+                            200: '#FFF0B3',
+                            300: '#FFE680',
+                            400: '#FFDC4D',
+                            500: '#FFD700',
+                            600: '#E6C200',
+                            700: '#B8860B',
+                            800: '#996F00',
+                            900: '#665200'
+                        },
+                        sage: {
+                            50: '#F7F8F5',
+                            100: '#EDF0E8',
+                            200: '#D4DCC7',
+                            300: '#BBC7A6',
+                            400: '#A2B285',
+                            500: '#9CAF88',
+                            600: '#8FBC8F',
+                            700: '#7A9B7A',
+                            800: '#6B8E6B',
+                            900: '#556B55'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'marquee': 'marquee 20s linear infinite',
+                        'marquee-reverse': 'marquee-reverse 25s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float-delayed 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        },
+                        'marquee-reverse': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(10deg)' }
+                        },
+                        'float-delayed': {
+                            '0%, 100%': { transform: 'translateY(-10px) rotate(-5deg)' },
+                            '50%': { transform: 'translateY(-30px) rotate(5deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #F5F5DC 0%, #FFFDD0 25%, #FDF5E6 50%, #FAF0E6 75%, #FFFFFF 100%);
+        }
+        .glass-effect {
+            background: rgba(245, 245, 220, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-lift:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        }
+        .text-shadow {
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+        }
+        .premium-gradient {
+            background: linear-gradient(45deg, #F5F5DC, #000000, #F5F5DC, #000000);
+            background-size: 400% 400%;
+            animation: gradient-shift 6s ease infinite;
+        }
+        .shimmer-effect {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        .luxury-border {
+            border: 3px solid;
+            border-image: linear-gradient(45deg, #000000, #F5F5DC, #000000) 1;
+        }
+        .elegant-shadow {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .dramatic-shadow {
+            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .text-outline {
+            -webkit-text-stroke: 2px #000000;
+            text-stroke: 2px #000000;
+        }
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+        .intense-blur {
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes float-intense {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            33% { transform: translateY(-30px) rotate(5deg) scale(1.1); }
+            66% { transform: translateY(-15px) rotate(-3deg) scale(0.95); }
+        }
+        .float-intense {
+            animation: float-intense 8s ease-in-out infinite;
+        }
+        .organic-shape {
+            border-radius: 60% 40% 70% 30% / 60% 30% 70% 40%;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .organic-shape:hover {
+            border-radius: 40% 60% 30% 70% / 40% 70% 30% 60%;
+            transform: scale(1.05) rotate(2deg);
+        }
+        .retro-border {
+            border: 4px solid #000000;
+            border-radius: 0px;
+            position: relative;
+        }
+        .retro-border:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border: 2px solid #F5F5DC;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
+        <div class="container mx-auto px-4 lg:px-6 py-3 lg:py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded-full flex items-center justify-center retro-border">
+                        <span class="text-white text-lg lg:text-xl">🇮🇹</span>
+                    </div>
+                    <div>
+                        <div class="text-lg lg:text-2xl font-black text-black tracking-tight leading-none">
+                            SAPORI
+                        </div>
+                        <div class="text-xs lg:text-sm font-black text-gray-600 tracking-widest uppercase">
+                            AUTENTICI
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link group relative">
+                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">HOME</span>
+                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    <a href="#products" class="nav-link group relative">
+                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">PRODOTTI</span>
+                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    <a href="#contact" class="nav-link group relative">
+                        <span class="text-sm font-black text-black group-hover:text-gray-700 transition-all duration-300 uppercase tracking-wider">CONTATTI</span>
+                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center space-x-2">
+                    <!-- Login/Register Button -->
+                    <button id="login-btn" class="retro-border bg-white text-black px-3 py-2 font-black text-xs tracking-wider hover:bg-gray-100 transition-all duration-300 uppercase hover:scale-105 elegant-shadow flex items-center space-x-1">
+                        <span class="text-sm">👤</span>
+                        <span>ACCEDI</span>
+                    </button>
+                    <!-- Purchase Button -->
+                    <button class="retro-border bg-black text-white px-4 py-2 font-black text-xs tracking-wider hover:bg-gray-900 transition-all duration-300 uppercase hover:scale-105 elegant-shadow">
+                        ACQUISTA ORA
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="w-10 h-10 bg-black flex items-center justify-center hover:bg-gray-900 transition-all duration-300 retro-border">
+                        <div class="w-5 h-5 relative">
+                            <span class="hamburger-line absolute top-1 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
+                            <span class="hamburger-line absolute top-2 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
+                            <span class="hamburger-line absolute top-3 left-0 w-5 h-0.5 bg-white transition-all duration-300"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden">
+            <div class="bg-white border-t-2 border-black shadow-lg">
+                <div class="container mx-auto px-4 py-6">
+                    <div class="space-y-4">
+                        <a href="#home" class="mobile-nav-link group block">
+                            <div class="retro-border bg-white p-4 hover:bg-black hover:text-white transition-all duration-300 group">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xl font-black uppercase tracking-wider">HOME</span>
+                                    <span class="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#products" class="mobile-nav-link group block">
+                            <div class="retro-border bg-black text-white p-4 hover:bg-white hover:text-black transition-all duration-300 group">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xl font-black uppercase tracking-wider">PRODOTTI</span>
+                                    <span class="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#contact" class="mobile-nav-link group block">
+                            <div class="retro-border bg-white p-4 hover:bg-black hover:text-white transition-all duration-300 group">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xl font-black uppercase tracking-wider">CONTATTI</span>
+                                    <span class="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Mobile Login -->
+                        <div class="pt-4 border-t-2 border-black">
+                            <button id="mobile-login-btn" class="retro-border bg-white text-black w-full py-3 text-base font-black tracking-wider hover:bg-gray-100 transition-all duration-300 uppercase flex items-center justify-center space-x-2">
+                                <span class="text-xl">👤</span>
+                                <span>ACCEDI / REGISTRATI</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Mobile CTA -->
+                        <div>
+                            <button class="retro-border bg-black text-white w-full py-3 text-base font-black tracking-wider hover:bg-gray-900 transition-all duration-300 uppercase">
+                                ACQUISTA ORA →
+                            </button>
+                        </div>
+                        
+                        <!-- Mobile Contact Info -->
+                        <div class="grid grid-cols-1 gap-3 pt-4 text-center">
+                            <div class="flex items-center justify-center space-x-2">
+                                <span class="text-xl">📞</span>
+                                <span class="text-sm font-bold text-black">+39 06 1234567</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span class="text-xl">✉️</span>
+                                <span class="text-sm font-bold text-black">INFO@SAPORIAUTENTICI.IT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen bg-gradient-to-br from-cream-50 to-white flex items-center justify-center overflow-hidden bg-pattern">
+        <div class="absolute inset-0 bg-black opacity-5"></div>
+        
+        <!-- Multiple Repeating Text Patterns -->
+        <div class="absolute inset-0 overflow-hidden opacity-8">
+            <div class="whitespace-nowrap text-black text-6xl md:text-8xl font-black transform rotate-12 absolute top-5 animate-marquee">
+                SAPORI AUTENTICI • MADE IN ITALY • TRADIZIONE • QUALITÀ • FAMIGLIA • ECCELLENZA • GENUINO • ARTIGIANALE •
+            </div>
+            <div class="whitespace-nowrap text-gray-800 text-4xl md:text-6xl font-black transform -rotate-6 absolute top-32 animate-marquee-reverse">
+                🍷 VINI • 🧀 FORMAGGI • 🫒 OLIO • 🍯 MIELE • 🥖 PANE • 🍇 UVA • 🌿 ERBE • 🍋 LIMONI •
+            </div>
+            <div class="whitespace-nowrap text-black text-6xl md:text-8xl font-black transform rotate-12 absolute bottom-32 animate-marquee">
+                PRODOTTI TIPICI • ECCELLENZA • FAMIGLIA • GENUINO • TRADIZIONE • QUALITÀ • MADE IN ITALY • SAPORI •
+            </div>
+            <div class="whitespace-nowrap text-gray-800 text-4xl md:text-6xl font-black transform -rotate-6 absolute bottom-5 animate-marquee-reverse">
+                🇮🇹 ITALIA • 🏛️ ROMA • 🌋 SICILIA • 🏔️ ALPI • 🌊 MARE • ☀️ SOLE • 🍃 NATURA • ❤️ AMORE •
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10 py-20">
+            <div class="mb-12">
+                <div class="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
+                    SAPORI
+                </div>
+                <div class="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
+                    AUTENTICI
+                </div>
+                <div class="text-2xl md:text-3xl lg:text-4xl font-black text-gray-600 leading-none tracking-wider">
+                    EST. 1950
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto mb-16">
+                <p class="text-2xl md:text-3xl lg:text-4xl text-black font-black leading-tight mb-6">
+                    L'AUTENTICA<br/>
+                    <span class="text-gray-700">TRADIZIONE</span><br/>
+                    ITALIANA.
+                </p>
+                <p class="text-lg md:text-xl text-gray-600 font-bold">
+                    Da tre generazioni, direttamente a casa tua.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-16">
+                <button class="retro-border bg-black text-white px-12 py-6 text-xl md:text-2xl font-black tracking-widest hover:bg-gray-900 transition-all duration-300 hover:scale-105 dramatic-shadow uppercase">
+                    TROVA SAPORI
+                </button>
+                <button class="retro-border bg-white text-black px-12 py-6 text-xl md:text-2xl font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 elegant-shadow uppercase">
+                    SCOPRI TUTTO
+                </button>
+            </div>
+
+            <!-- Certification Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-4xl mb-2">🇮🇹</div>
+                    <div class="text-sm font-black text-black uppercase tracking-wider">Made in Italy</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-2">🌿</div>
+                    <div class="text-sm font-black text-black uppercase tracking-wider">100% Naturale</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-2">⭐</div>
+                    <div class="text-sm font-black text-black uppercase tracking-wider">Qualità Premium</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-2">🏆</div>
+                    <div class="text-sm font-black text-black uppercase tracking-wider">Dal 1950</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Floating Elements -->
+        <div class="absolute top-10 left-10 float-intense">
+            <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center dramatic-shadow">
+                <span class="text-2xl text-white">🍷</span>
+            </div>
+        </div>
+        <div class="absolute top-20 right-10 float-intense" style="animation-delay: -2s;">
+            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center elegant-shadow retro-border">
+                <span class="text-xl">🧀</span>
+            </div>
+        </div>
+        <div class="absolute bottom-32 left-20 float-intense" style="animation-delay: -4s;">
+            <div class="w-18 h-18 bg-black rounded-full flex items-center justify-center dramatic-shadow">
+                <span class="text-3xl text-white">🫒</span>
+            </div>
+        </div>
+        <div class="absolute bottom-10 right-20 float-intense" style="animation-delay: -6s;">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center elegant-shadow retro-border">
+                <span class="text-lg">🍯</span>
+            </div>
+        </div>
+        
+        <!-- Corner Decorations -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-black transform rotate-45 -translate-x-16 -translate-y-16"></div>
+        <div class="absolute top-0 right-0 w-24 h-24 bg-gray-800 transform rotate-45 translate-x-12 -translate-y-12"></div>
+        <div class="absolute bottom-0 left-0 w-20 h-20 bg-gray-700 transform rotate-45 -translate-x-10 translate-y-10"></div>
+        <div class="absolute bottom-0 right-0 w-28 h-28 bg-black transform rotate-45 translate-x-14 translate-y-14"></div>
+    </section>
+
+    <!-- Bold Statement Section -->
+    <section class="py-40 bg-black text-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-none tracking-tighter">
+                    È SEMPLICE.
+                </div>
+                <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-12 leading-none tracking-tighter">
+                    È <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">AUTENTICO</span>.
+                </div>
+                <div class="text-xl md:text-2xl font-bold text-gray-300 max-w-3xl mx-auto leading-tight">
+                    Ogni prodotto che selezioniamo ha un'anima, una storia,<br/>
+                    una tradizione che si tramanda da generazioni.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 text-4xl opacity-20 float-intense">🇮🇹</div>
+        <div class="absolute bottom-20 right-10 text-4xl opacity-20 float-intense" style="animation-delay: -3s;">⭐</div>
+        <div class="absolute top-1/2 left-1/4 text-3xl opacity-10 float-intense" style="animation-delay: -1s;">🏆</div>
+        <div class="absolute top-1/3 right-1/4 text-3xl opacity-10 float-intense" style="animation-delay: -5s;">❤️</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-40 bg-white relative overflow-hidden bg-pattern">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="relative">
+                    <div class="text-[8rem] md:text-[10rem] font-black text-gray-100 leading-none mb-8 absolute -top-10 -left-5">
+                        1950
+                    </div>
+                    <div class="relative z-10 pt-24">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-none tracking-tighter">
+                            LA NOSTRA<br/>
+                            STORIA
+                        </h2>
+                        <div class="w-24 h-2 bg-black mb-8"></div>
+                        <div class="space-y-6">
+                            <p class="text-xl md:text-2xl text-black font-black leading-tight">
+                                TRADIZIONE.<br/>
+                                PASSIONE.<br/>
+                                ECCELLENZA.
+                            </p>
+                            <p class="text-lg text-gray-600 font-medium leading-relaxed">
+                                Da tre generazioni la famiglia Rossi seleziona i migliori prodotti tipici italiani, 
+                                creando un ponte diretto tra i produttori locali e le tavole di tutto il mondo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-16">
+                    <div class="retro-border bg-white p-12 dramatic-shadow">
+                        <div class="text-6xl mb-6">🏛️</div>
+                        <h3 class="text-3xl font-black text-black mb-6 uppercase tracking-wider">DOVE TUTTO INIZIÒ</h3>
+                        <p class="text-lg text-gray-600 font-medium leading-relaxed">
+                            Nel 1950, nel cuore di Roma, Nonno Giuseppe apre la prima bottega di prodotti tipici. 
+                            La filosofia era semplice: solo prodotti di altissima qualità, selezionati personalmente.
+                        </p>
+                    </div>
+                    
+                    <div class="retro-border bg-black text-white p-12 dramatic-shadow">
+                        <div class="text-6xl mb-6">🌟</div>
+                        <h3 class="text-3xl font-black mb-6 uppercase tracking-wider">OGGI</h3>
+                        <p class="text-lg text-gray-300 font-medium leading-relaxed">
+                            Tre generazioni dopo, continuiamo la tradizione con lo stesso amore e dedizione, 
+                            portando l'eccellenza italiana in tutto il mondo attraverso la nostra piattaforma digitale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute -top-20 -right-20 w-96 h-96 bg-black rounded-full opacity-5"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-gray-800 rounded-full opacity-5"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-32 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <!-- Repeating text background -->
+            <div class="absolute inset-0 overflow-hidden opacity-5">
+                <div class="whitespace-nowrap text-white text-8xl font-black absolute top-1/4 animate-marquee">
+                    70+ ANNI • 500+ PRODOTTI • 100% QUALITÀ • 70+ ANNI • 500+ PRODOTTI • 100% QUALITÀ •
+                </div>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-none">
+                        I NUMERI<br/>
+                        <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">PARLANO</span>
+                    </h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="retro-border bg-white text-black p-8 hover-lift">
+                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                            70+
+                        </div>
+                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                            ANNI DI<br/>ESPERIENZA
+                        </p>
+                    </div>
+                    <div class="retro-border bg-white text-black p-8 hover-lift">
+                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                            500+
+                        </div>
+                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                            PRODOTTI<br/>SELEZIONATI
+                        </p>
+                    </div>
+                    <div class="retro-border bg-white text-black p-8 hover-lift">
+                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                            100%
+                        </div>
+                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                            QUALITÀ<br/>GARANTITA
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transition Section -->
+    <section class="py-40 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-none tracking-tighter">
+                    COSA<br/>
+                    OFFRIAMO?
+                </div>
+                <div class="text-xl md:text-2xl font-bold text-gray-600 max-w-4xl mx-auto leading-tight mb-12">
+                    Tre categorie principali.<br/>
+                    Centinaia di prodotti selezionati.<br/>
+                    <span class="text-black">Un'unica garanzia: l'eccellenza.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Large Background Text -->
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden opacity-5">
+            <div class="text-[12rem] font-black text-black">🇮🇹</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-40 bg-black text-white relative overflow-hidden">
+        <!-- Rotating background text -->
+        <div class="absolute inset-0 overflow-hidden opacity-10">
+            <div class="whitespace-nowrap text-white text-6xl font-black absolute top-10 animate-marquee">
+                🍷 VINI PREGIATI • 🧀 FORMAGGI ARTIGIANALI • 🫒 OLIO EXTRAVERGINE • 🍯 MIELE BIOLOGICO •
+            </div>
+            <div class="whitespace-nowrap text-white text-8xl font-black absolute top-1/3 animate-marquee-reverse">
+                TRADIZIONE • QUALITÀ • ECCELLENZA • SAPORE • AUTENTICITÀ • PASSIONE • FAMIGLIA •
+            </div>
+            <div class="whitespace-nowrap text-white text-6xl font-black absolute bottom-10 animate-marquee">
+                🇮🇹 100% ITALIANO • ⭐ PREMIUM • 🏆 SELEZIONATO • 🌿 NATURALE • ❤️ CON AMORE •
+            </div>
+                </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Products Grid -->
+            <div class="space-y-40">
+                <!-- Wine Category -->
+                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="text-6xl mb-6 leading-none">🍷</div>
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                            VINI<br/>
+                            <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">PREGIATI</span>
+                        </h3>
+                        <div class="w-24 h-2 bg-white mb-8"></div>
+                        <p class="text-lg text-gray-300 mb-8 font-bold leading-relaxed">
+                            Dalle colline toscane alle vigne siciliane.<br/>
+                            Ogni bottiglia racconta una storia di territorio,<br/>
+                            tradizione e passione per l'eccellenza.
+                        </p>
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="text-3xl font-black text-white">DA €25</span>
+                            <div class="retro-border bg-white text-black px-4 py-2 text-sm font-black uppercase tracking-wider">
+                                BESTSELLER
+                            </div>
+                        </div>
+                        <button class="retro-border bg-white text-black px-8 py-4 text-lg font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 uppercase">
+                            TROVA VINI
+                        </button>
+                    </div>
+                    <div class="order-1 lg:order-2 relative">
+                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-8xl text-black opacity-80 float-intense">🍷</div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- Cheese Category -->
+                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                    <div class="relative">
+                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-8xl text-black opacity-80 float-intense" style="animation-delay: -2s;">🧀</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-6xl mb-6 leading-none">🧀</div>
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                            FORMAGGI<br/>
+                            <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">ARTIGIANALI</span>
+                        </h3>
+                        <div class="w-24 h-2 bg-white mb-8"></div>
+                        <p class="text-lg text-gray-300 mb-8 font-bold leading-relaxed">
+                            Stagionati secondo tradizione nelle migliori<br/>
+                            casare italiane. Dal Parmigiano Reggiano<br/>
+                            al Gorgonzola DOP, sapori autentici e genuini.
+                        </p>
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="text-3xl font-black text-white">DA €18</span>
+                            <div class="retro-border bg-white text-black px-4 py-2 text-sm font-black uppercase tracking-wider">
+                                ARTIGIANALE
+                            </div>
+                        </div>
+                        <button class="retro-border bg-white text-black px-8 py-4 text-lg font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 uppercase">
+                            TROVA FORMAGGI
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Oil Category -->
+                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="text-6xl mb-6 leading-none">🫒</div>
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                            OLIO<br/>
+                            <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">EXTRAVERGINE</span>
+                        </h3>
+                        <div class="w-24 h-2 bg-white mb-8"></div>
+                        <p class="text-lg text-gray-300 mb-8 font-bold leading-relaxed">
+                            Dalle migliori oliveti italiani.<br/>
+                            Spremuto a freddo per preservare<br/>
+                            tutti i sapori e le proprietà nutritive.
+                        </p>
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="text-3xl font-black text-white">DA €32</span>
+                            <div class="retro-border bg-white text-black px-4 py-2 text-sm font-black uppercase tracking-wider">
+                                BIO DOP
+                            </div>
+                        </div>
+                        <button class="retro-border bg-white text-black px-8 py-4 text-lg font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 uppercase">
+                            TROVA OLIO
+                        </button>
+                    </div>
+                    <div class="order-1 lg:order-2 relative">
+                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-8xl text-black opacity-80 float-intense" style="animation-delay: -4s;">🫒</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-32">
+                <div class="relative">
+                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-none tracking-tighter">
+                        PRONTO A<br/>
+                        <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">GUSTARE?</span>
+                    </h3>
+                    <div class="text-xl md:text-2xl text-gray-300 font-bold mb-12">
+                        Non aspettare. L'eccellenza italiana ti aspetta.
+                    </div>
+                    <button class="retro-border bg-white text-black px-12 py-6 text-xl font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 uppercase dramatic-shadow">
+                        TROVA TUTTI I SAPORI
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Geometric shapes -->
+        <div class="absolute top-1/4 left-20 w-32 h-32 bg-white rotate-45 opacity-10"></div>
+        <div class="absolute top-3/4 right-20 w-24 h-24 bg-gray-300 rotate-45 opacity-20"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-16 h-16 bg-white rotate-45 opacity-15"></div>
+        
+        <!-- Background Decoration -->
+        <div class="absolute bottom-0 left-0 w-full h-32 opacity-5">
+            <div class="text-[15rem] text-cream-800 whitespace-nowrap">🍯🥖🍇🧀🍷🫒</div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-24 bg-white relative overflow-hidden bg-pattern">
+        <!-- Background marquee text -->
+        <div class="absolute inset-0 overflow-hidden opacity-5">
+            <div class="whitespace-nowrap text-black text-4xl md:text-5xl font-black absolute top-10 animate-marquee">
+                📖 STORIE • 🍝 RICETTE • 🇮🇹 TRADIZIONI • 👨‍🍳 CHEF • 🏛️ CULTURA • ❤️ PASSIONE •
+            </div>
+            <div class="whitespace-nowrap text-gray-800 text-5xl md:text-6xl font-black absolute bottom-10 animate-marquee-reverse">
+                DAL NOSTRO BLOG • SCOPRI • IMPARA • GUSTA • VIVI L'ITALIA • DAL NOSTRO BLOG •
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-8 leading-none tracking-tighter">
+                    DAL NOSTRO<br/>
+                    <span class="text-outline" style="-webkit-text-stroke: 2px black; color: transparent;">BLOG</span>
+                </h2>
+                <div class="w-24 h-4 bg-black mx-auto mb-8"></div>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-bold leading-tight">
+                    Storie autentiche, ricette tradizionali,<br/>
+                    e curiosità sui prodotti tipici italiani.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Blog Post 1 -->
+                <article class="retro-border bg-white hover-lift group elegant-shadow">
+                    <div class="h-48 bg-black relative overflow-hidden flex items-center justify-center">
+                        <div class="text-5xl text-white opacity-80 float-intense">🍝</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-gray-500 mb-3 font-black uppercase tracking-wider">15 DIC 2023</div>
+                        <h3 class="text-lg md:text-xl font-black text-black mb-4 leading-tight uppercase tracking-wide">
+                            LE TRADIZIONI<br/>
+                            CULINARIE DEL<br/>
+                            SUD ITALIA
+                        </h3>
+                        <p class="text-gray-600 mb-6 font-medium leading-relaxed text-sm">
+                            Un viaggio attraverso i sapori autentici del Mezzogiorno, tra storia, famiglia e passione.
+                        </p>
+                        <button class="retro-border bg-black text-white px-6 py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
+                            LEGGI TUTTO
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="retro-border bg-black text-white hover-lift group elegant-shadow">
+                    <div class="h-48 bg-white relative overflow-hidden flex items-center justify-center">
+                        <div class="text-5xl text-black opacity-80 float-intense" style="animation-delay: -2s;">🍷</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-gray-400 mb-3 font-black uppercase tracking-wider">10 DIC 2023</div>
+                        <h3 class="text-lg md:text-xl font-black text-white mb-4 leading-tight uppercase tracking-wide">
+                            COME DEGUSTARE<br/>
+                            I VINI<br/>
+                            ITALIANI
+                        </h3>
+                        <p class="text-gray-300 mb-6 font-medium leading-relaxed text-sm">
+                            Una guida completa per apprezzare al meglio i nostri vini, dalle tecniche alle tradizioni.
+                        </p>
+                        <button class="retro-border bg-white text-black px-6 py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-100 transition-all duration-300">
+                            LEGGI TUTTO
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="retro-border bg-white hover-lift group elegant-shadow">
+                    <div class="h-48 bg-black relative overflow-hidden flex items-center justify-center">
+                        <div class="text-5xl text-white opacity-80 float-intense" style="animation-delay: -4s;">👵</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-gray-500 mb-3 font-black uppercase tracking-wider">5 DIC 2023</div>
+                        <h3 class="text-lg md:text-xl font-black text-black mb-4 leading-tight uppercase tracking-wide">
+                            RICETTE<br/>
+                            TRADIZIONALI<br/>
+                            DELLA NONNA
+                        </h3>
+                        <p class="text-gray-600 mb-6 font-medium leading-relaxed text-sm">
+                            I segreti tramandati di generazione in generazione, custodi dell'autenticità italiana.
+                        </p>
+                        <button class="retro-border bg-black text-white px-6 py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
+                            LEGGI TUTTO
+                        </button>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Blog CTA -->
+            <div class="text-center mt-20">
+                <button class="retro-border bg-black text-white px-12 py-6 text-xl font-black tracking-widest hover:bg-gray-900 transition-all duration-300 hover:scale-105 uppercase elegant-shadow">
+                    VISITA IL BLOG COMPLETO
+                </button>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-1/4 right-10 w-20 h-20 bg-black rotate-45 opacity-10"></div>
+        <div class="absolute bottom-1/3 left-10 w-16 h-16 bg-gray-800 rotate-45 opacity-15"></div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payments" class="py-24 bg-black text-white relative overflow-hidden">
+        <!-- Background text -->
+        <div class="absolute inset-0 overflow-hidden opacity-5">
+            <div class="whitespace-nowrap text-white text-4xl md:text-5xl font-black absolute top-1/4 animate-marquee">
+                💳 SICURO • 🔒 PROTETTO • ⚡ VELOCE • 🛡️ SSL • 💳 SICURO • 🔒 PROTETTO • ⚡ VELOCE •
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-none tracking-tighter">
+                    COME<br/>
+                    <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">PAGARE?</span>
+                </h2>
+                <div class="w-24 h-4 bg-white mx-auto mb-8"></div>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-bold leading-tight">
+                    Sicurezza, velocità e convenienza.<br/>
+                    Scegli il metodo che preferisci.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- PayPal -->
+                <div class="retro-border bg-white text-black text-center p-8 hover-lift elegant-shadow">
+                    <div class="text-5xl mb-6">💳</div>
+                    <h3 class="text-xl font-black mb-4 uppercase tracking-wider">PAYPAL</h3>
+                    <p class="text-gray-600 font-bold mb-6 text-sm">
+                        Pagamento sicuro<br/>
+                        e veloce
+                    </p>
+                    <div class="text-xs font-black text-gray-500 uppercase tracking-wider">
+                        ISTANTANEO
+                    </div>
+                </div>
+
+                <!-- Credit Cards -->
+                <div class="retro-border bg-black text-white text-center p-8 hover-lift elegant-shadow">
+                    <div class="text-5xl mb-6">💳</div>
+                    <h3 class="text-xl font-black mb-4 uppercase tracking-wider">CARTE<br/>DI CREDITO</h3>
+                    <p class="text-gray-300 font-bold mb-6 text-sm">
+                        Visa, Mastercard<br/>
+                        American Express
+                    </p>
+                    <div class="text-xs font-black text-gray-400 uppercase tracking-wider">
+                        SICURO AL 100%
+                    </div>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="retro-border bg-white text-black text-center p-8 hover-lift elegant-shadow">
+                    <div class="text-5xl mb-6">🏦</div>
+                    <h3 class="text-xl font-black mb-4 uppercase tracking-wider">BONIFICO<br/>BANCARIO</h3>
+                    <p class="text-gray-600 font-bold mb-6 text-sm">
+                        Pagamento<br/>
+                        tradizionale
+                    </p>
+                    <div class="text-xs font-black text-gray-500 uppercase tracking-wider">
+                        AFFIDABILE
+                    </div>
+                </div>
+
+                <!-- Cash on Delivery -->
+                <div class="retro-border bg-black text-white text-center p-8 hover-lift elegant-shadow">
+                    <div class="text-5xl mb-6">🚚</div>
+                    <h3 class="text-xl font-black mb-4 uppercase tracking-wider">CONTRASSEGNO</h3>
+                    <p class="text-gray-300 font-bold mb-6 text-sm">
+                        Paga alla<br/>
+                        consegna
+                    </p>
+                    <div class="text-xs font-black text-gray-400 uppercase tracking-wider">
+                        SENZA RISCHI
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security Badge -->
+            <div class="text-center mt-20">
+                <div class="retro-border bg-white text-black inline-flex items-center px-8 py-4 elegant-shadow">
+                    <div class="text-2xl mr-3">🛡️</div>
+                    <div>
+                        <div class="text-lg font-black uppercase tracking-wider">PAGAMENTI PROTETTI</div>
+                        <div class="text-xs font-bold text-gray-600">SSL 256-BIT ENCRYPTION</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-24 h-24 bg-white rotate-45 opacity-10"></div>
+        <div class="absolute bottom-20 right-10 w-20 h-20 bg-gray-300 rotate-45 opacity-15"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white text-black py-8 relative overflow-hidden bg-pattern">
+        <!-- Background marquee -->
+        <div class="absolute inset-0 overflow-hidden opacity-5">
+            <div class="whitespace-nowrap text-black text-2xl md:text-3xl font-black absolute top-4 animate-marquee">
+                🇮🇹 SAPORI AUTENTICI • ❤️ MADE WITH LOVE • 🏛️ ROMA • 🌿 NATURALE • 👨‍👩‍👧‍👦 FAMIGLIA •
+            </div>
+            <div class="whitespace-nowrap text-gray-800 text-3xl md:text-4xl font-black absolute bottom-4 animate-marquee-reverse">
+                CONTATTACI • SEGUICI • SCOPRI • GUSTA • VIVI L'ITALIA • CONTATTACI • SEGUICI •
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Main Footer Content -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-8">
+                <!-- Left Column - Brand & Contact -->
+                <div>
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-2 mb-4 group cursor-pointer">
+                        <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                            <span class="text-white text-lg">🇮🇹</span>
+                        </div>
+                        <div>
+                            <div class="text-xl md:text-2xl font-black text-black tracking-tight leading-none group-hover:text-gray-700 transition-colors duration-300">
+                                SAPORI
+                            </div>
+                            <div class="text-xs font-bold text-gray-600 tracking-widest uppercase group-hover:text-black transition-colors duration-300">
+                                Autentici
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="mb-4">
+                        <h3 class="text-lg font-black text-black mb-2 leading-tight uppercase tracking-wide hover:text-gray-700 transition-colors duration-300 cursor-pointer">
+                            DA TRE GENERAZIONI.
+                        </h3>
+                        <p class="text-sm text-gray-600 font-bold leading-tight mb-2">
+                            Eccellenza italiana direttamente a casa tua.
+                        </p>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-1">
+                        <div class="flex items-center group cursor-pointer hover:bg-gray-50 p-1 rounded transition-all duration-300">
+                            <div class="text-lg mr-2 group-hover:scale-125 transition-transform duration-300">📍</div>
+                            <div>
+                                <div class="text-xs font-black text-black group-hover:text-gray-700 transition-colors duration-300">VIA ROMA 123, 00100 ROMA</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center group cursor-pointer hover:bg-gray-50 p-1 rounded transition-all duration-300">
+                            <div class="text-lg mr-2 group-hover:scale-125 transition-transform duration-300">📞</div>
+                            <div>
+                                <div class="text-xs font-black text-black group-hover:text-gray-700 transition-colors duration-300">+39 06 1234567</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center group cursor-pointer hover:bg-gray-50 p-1 rounded transition-all duration-300">
+                            <div class="text-lg mr-2 group-hover:scale-125 transition-transform duration-300">✉️</div>
+                            <div>
+                                <div class="text-xs font-black text-black group-hover:text-gray-700 transition-colors duration-300">INFO@SAPORIAUTENTICI.IT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Links & Newsletter -->
+                <div>
+                    <!-- Quick Links -->
+                    <div class="mb-4">
+                        <h3 class="text-lg font-black text-black mb-2 uppercase tracking-wider hover:text-gray-700 transition-colors duration-300 cursor-pointer">ESPLORA</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="space-y-1">
+                                <a href="#home" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">HOME</a>
+                                <a href="#about" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">STORIA</a>
+                                <a href="#products" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">PRODOTTI</a>
+                                <a href="#blog" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">BLOG</a>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="#" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">SPEDIZIONI</a>
+                                <a href="#" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">RESI</a>
+                                <a href="#" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">FAQ</a>
+                                <a href="#" class="block text-xs font-black text-gray-600 hover:text-black hover:translate-x-1 transition-all duration-300 uppercase tracking-wide hover:bg-gray-50 p-1 rounded">PRIVACY</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="retro-border bg-black text-white p-4 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <h3 class="text-base font-black mb-2 uppercase tracking-wider">NEWSLETTER</h3>
+                        <p class="text-gray-300 font-bold mb-2 leading-tight text-xs">
+                            Offerte esclusive e novità.
+                        </p>
+                        <div class="space-y-2" id="newsletter-form">
+                            <input type="email" placeholder="LA TUA EMAIL" class="w-full px-2 py-1 bg-white text-black font-bold placeholder-gray-500 focus:outline-none retro-border text-xs focus:ring-2 focus:ring-gray-400 transition-all duration-300">
+                            <button class="retro-border bg-white text-black px-3 py-1 text-xs font-black uppercase tracking-wider hover:bg-gray-100 hover:scale-105 transition-all duration-300 w-full group">
+                                <span class="group-hover:hidden">ISCRIVITI</span>
+                                <span class="hidden group-hover:inline">UNISCITI! →</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="text-center mb-6">
+                <h3 class="text-base font-black text-black mb-3 uppercase tracking-wider hover:text-gray-700 transition-colors duration-300 cursor-pointer">SEGUICI</h3>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="retro-border bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-125 hover:rotate-12 group">
+                        <div class="text-base group-hover:animate-bounce">📘</div>
+                    </a>
+                    <a href="#" class="retro-border bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-125 hover:-rotate-12 group">
+                        <div class="text-base group-hover:animate-bounce">📷</div>
+                    </a>
+                    <a href="#" class="retro-border bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-125 hover:rotate-12 group">
+                        <div class="text-base group-hover:animate-bounce">🐦</div>
+                    </a>
+                    <a href="#" class="retro-border bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-125 hover:-rotate-12 group">
+                        <div class="text-base group-hover:animate-bounce">📺</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center border-t-2 border-black pt-4 hover:bg-gray-50 transition-colors duration-300 cursor-pointer group">
+                <div class="text-xs font-black text-black mb-1 uppercase tracking-wider group-hover:text-gray-700 transition-colors duration-300">
+                    © 2023 SAPORI AUTENTICI
+                </div>
+                <div class="text-gray-600 font-bold text-xs group-hover:text-black transition-colors duration-300">
+                    TUTTI I DIRITTI RISERVATI • P.IVA 12345678901
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-20 w-32 h-32 bg-black rotate-45 opacity-5"></div>
+        <div class="absolute bottom-20 left-20 w-24 h-24 bg-gray-800 rotate-45 opacity-10"></div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-gold-500 hover:bg-gold-600 text-cream-900 w-12 h-12 rounded-full elegant-shadow transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 30) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '2px solid #000000';
+                navbar.classList.add('elegant-shadow');
+                navbar.style.padding = '0.5rem 0';
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.6)';
+                navbar.style.backdropFilter = 'blur(15px)';
+                navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
+                navbar.classList.remove('elegant-shadow');
+                navbar.style.padding = '';
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Mobile menu toggle with hamburger animation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        let isMenuOpen = false;
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden');
+            
+            if (isMenuOpen) {
+                // Transform to X (adjusted for smaller hamburger)
+                hamburgerLines[0].style.transform = 'rotate(45deg) translate(2px, 2px)';
+                hamburgerLines[1].style.opacity = '0';
+                hamburgerLines[2].style.transform = 'rotate(-45deg) translate(3px, -2px)';
+                mobileMenuBtn.style.backgroundColor = '#374151';
+            } else {
+                // Back to hamburger
+                hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+                hamburgerLines[1].style.opacity = '1';
+                hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+                mobileMenuBtn.style.backgroundColor = '#000000';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        isMenuOpen = false;
+                        // Reset hamburger
+                        hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+                        hamburgerLines[1].style.opacity = '1';
+                        hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+                    }
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section > div > div').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#home');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Product hover effects
+        document.querySelectorAll('.hover-lift').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Enhanced newsletter form submission
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterBtn = newsletterForm.querySelector('button');
+        const newsletterInput = newsletterForm.querySelector('input[type="email"]');
+        
+        newsletterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = newsletterInput.value;
+            if (email && email.includes('@')) {
+                // Success animation
+                newsletterBtn.innerHTML = '<span class="animate-pulse">✅ ISCRITTO!</span>';
+                newsletterBtn.classList.add('bg-green-500', 'text-white');
+                newsletterInput.value = '';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    newsletterBtn.innerHTML = '<span>ISCRIVITI</span>';
+                    newsletterBtn.classList.remove('bg-green-500', 'text-white');
+                }, 3000);
+            } else {
+                // Error animation
+                newsletterInput.classList.add('ring-red-500', 'ring-4');
+                newsletterInput.placeholder = 'EMAIL NON VALIDA!';
+                
+                setTimeout(() => {
+                    newsletterInput.classList.remove('ring-red-500', 'ring-4');
+                    newsletterInput.placeholder = 'LA TUA EMAIL';
+                }, 2000);
+            }
+        });
+
+        // Footer contact items click effects
+        document.querySelectorAll('footer .group.cursor-pointer').forEach(item => {
+            item.addEventListener('click', function() {
+                // Add a click ripple effect
+                const ripple = document.createElement('div');
+                ripple.className = 'absolute inset-0 bg-black opacity-20 rounded animate-ping';
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    if (ripple.parentNode) {
+                        ripple.parentNode.removeChild(ripple);
+                    }
+                }, 600);
+            });
+        });
+
+        // Footer links hover sound effect simulation
+        document.querySelectorAll('footer a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                // Add hover feedback
+                this.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.textShadow = 'none';
+            });
+        });
+
+        // Initialize navbar
+        const navbar = document.getElementById('navbar');
+        navbar.style.background = 'rgba(255, 255, 255, 0.6)';
+        navbar.style.backdropFilter = 'blur(15px)';
+        navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
+        
+        // Add responsive behavior for navbar height
+        function adjustNavbarHeight() {
+            const isMobile = window.innerWidth < 1024;
+            if (isMobile) {
+                navbar.style.minHeight = '4rem';
+            } else {
+                navbar.style.minHeight = '5rem';
+            }
+        }
+        
+        // Initial call and listener for resize
+        adjustNavbarHeight();
+        window.addEventListener('resize', adjustNavbarHeight);
+
+        // Login/Register functionality
+        const loginBtns = document.querySelectorAll('#login-btn, #mobile-login-btn');
+        let currentUserState = null;
+
+        // Create login modal
+        function createLoginModal() {
+            const modal = document.createElement('div');
+            modal.id = 'login-modal';
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden';
+            modal.innerHTML = `
+                <div class="bg-white retro-border p-8 max-w-md w-full mx-4 relative">
+                    <button id="close-modal" class="absolute top-4 right-4 text-2xl hover:text-gray-700 transition-colors">×</button>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">👤</div>
+                        <h2 class="text-2xl font-black uppercase tracking-wider" id="modal-title">ACCEDI</h2>
+                    </div>
+                    
+                    <div id="login-form">
+                        <div class="space-y-4">
+                            <input type="email" id="email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <input type="password" id="password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <button id="login-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
+                                ACCEDI
+                            </button>
+                            <button id="switch-to-register" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider">
+                                NON HAI UN ACCOUNT? REGISTRATI
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="register-form" class="hidden">
+                        <div class="space-y-4">
+                            <input type="text" id="reg-name" placeholder="NOME COMPLETO" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <input type="email" id="reg-email" placeholder="EMAIL" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <input type="password" id="reg-password" placeholder="PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <input type="password" id="reg-confirm" placeholder="CONFERMA PASSWORD" class="w-full px-4 py-3 retro-border text-sm font-bold focus:outline-none focus:ring-2 focus:ring-black">
+                            <button id="register-submit" class="retro-border bg-black text-white w-full py-3 text-sm font-black uppercase tracking-wider hover:bg-gray-900 transition-all duration-300">
+                                REGISTRATI
+                            </button>
+                            <button id="switch-to-login" class="w-full py-2 text-sm font-bold text-gray-600 hover:text-black transition-colors uppercase tracking-wider">
+                                HAI GIÀ UN ACCOUNT? ACCEDI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            return modal;
+        }
+
+        const modal = createLoginModal();
+
+        // Modal controls
+        function showModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function switchToRegister() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+            document.getElementById('modal-title').textContent = 'REGISTRATI';
+        }
+
+        function switchToLogin() {
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('modal-title').textContent = 'ACCEDI';
+        }
+
+        function updateUserState(user) {
+            currentUserState = user;
+            const greeting = `Ciao, ${user.name}! 👋`;
+            
+                         // Update desktop button
+             document.getElementById('login-btn').innerHTML = '<span class="text-sm">👤</span><span>CIAO, ' + user.name.toUpperCase() + '</span>';
+             
+             // Update mobile button
+             document.getElementById('mobile-login-btn').innerHTML = '<span class="text-xl">👤</span><span>CIAO, ' + user.name.toUpperCase() + '</span>';
+            
+                         // Show success message
+             setTimeout(() => {
+                 alert('Benvenuto, ' + user.name + '! Sei ora connesso a Sapori Autentici 🇮🇹');
+             }, 500);
+        }
+
+        // Event listeners
+        loginBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                                 if (currentUserState) {
+                     // User logged in - show profile or logout
+                     const action = confirm('Ciao ' + currentUserState.name + '! Vuoi disconnetterti?');
+                     if (action) {
+                                                 currentUserState = null;
+                         document.getElementById('login-btn').innerHTML = '<span class="text-sm">👤</span><span>ACCEDI</span>';
+                         document.getElementById('mobile-login-btn').innerHTML = '<span class="text-xl">👤</span><span>ACCEDI / REGISTRATI</span>';
+                         alert('Arrivederci! Sei stato disconnesso.');
+                    }
+                } else {
+                    showModal();
+                }
+            });
+        });
+
+        document.getElementById('close-modal').addEventListener('click', hideModal);
+        document.getElementById('switch-to-register').addEventListener('click', switchToRegister);
+        document.getElementById('switch-to-login').addEventListener('click', switchToLogin);
+
+        // Login functionality
+        document.getElementById('login-submit').addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                if (email.includes('@')) {
+                    const userName = email.split('@')[0];
+                    updateUserState({ name: userName, email: email });
+                    hideModal();
+                    // Clear form
+                    document.getElementById('email').value = '';
+                    document.getElementById('password').value = '';
+                } else {
+                    alert('Inserisci un indirizzo email valido!');
+                }
+            } else {
+                alert('Compila tutti i campi!');
+            }
+        });
+
+        // Register functionality
+        document.getElementById('register-submit').addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm').value;
+            
+            if (name && email && password && confirm) {
+                if (!email.includes('@')) {
+                    alert('Inserisci un indirizzo email valido!');
+                    return;
+                }
+                if (password !== confirm) {
+                    alert('Le password non coincidono!');
+                    return;
+                }
+                if (password.length < 6) {
+                    alert('La password deve essere di almeno 6 caratteri!');
+                    return;
+                }
+                
+                updateUserState({ name: name, email: email });
+                hideModal();
+                
+                // Clear form
+                document.getElementById('reg-name').value = '';
+                document.getElementById('reg-email').value = '';
+                document.getElementById('reg-password').value = '';
+                document.getElementById('reg-confirm').value = '';
+            } else {
+                alert('Compila tutti i campi!');
+            }
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
