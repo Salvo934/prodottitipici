@@ -156,6 +156,11 @@
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
+        
+        /* Prevent horizontal overflow on mobile */
+        body {
+            overflow-x: hidden;
+        }
         @keyframes float-intense {
             0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
             33% { transform: translateY(-30px) rotate(5deg) scale(1.1); }
@@ -318,7 +323,7 @@
         <div class="absolute inset-0 bg-black opacity-5"></div>
         
         <!-- Multiple Repeating Text Patterns -->
-        <div class="absolute inset-0 overflow-hidden opacity-8">
+        <div class="absolute inset-0 overflow-hidden opacity-8 hidden md:block">
             <div class="whitespace-nowrap text-black text-6xl md:text-8xl font-black transform rotate-12 absolute top-5 animate-marquee">
                 SAPORI AUTENTICI • MADE IN ITALY • TRADIZIONE • QUALITÀ • FAMIGLIA • ECCELLENZA • GENUINO • ARTIGIANALE •
             </div>
@@ -334,34 +339,34 @@
         </div>
 
         <div class="container mx-auto px-6 text-center relative z-10 py-20">
-            <div class="mb-12">
-                <div class="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
+            <div class="mb-8 md:mb-12">
+                <div class="text-4xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
                     SAPORI
                 </div>
-                <div class="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
+                <div class="text-4xl md:text-6xl lg:text-7xl font-black text-black mb-2 leading-none tracking-tighter text-shadow">
                     AUTENTICI
                 </div>
-                <div class="text-2xl md:text-3xl lg:text-4xl font-black text-gray-600 leading-none tracking-wider">
+                <div class="text-xl md:text-3xl lg:text-4xl font-black text-gray-600 leading-none tracking-wider">
                     EST. 1950
                 </div>
             </div>
             
-            <div class="max-w-4xl mx-auto mb-16">
-                <p class="text-2xl md:text-3xl lg:text-4xl text-black font-black leading-tight mb-6">
+            <div class="max-w-4xl mx-auto mb-12 md:mb-16">
+                <p class="text-xl md:text-3xl lg:text-4xl text-black font-black leading-tight mb-4 md:mb-6">
                     L'AUTENTICA<br/>
                     <span class="text-gray-700">TRADIZIONE</span><br/>
                     ITALIANA.
                 </p>
-                <p class="text-lg md:text-xl text-gray-600 font-bold">
+                <p class="text-base md:text-xl text-gray-600 font-bold">
                     Da tre generazioni, direttamente a casa tua.
                 </p>
             </div>
 
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-16">
-                <button class="retro-border bg-black text-white px-12 py-6 text-xl md:text-2xl font-black tracking-widest hover:bg-gray-900 transition-all duration-300 hover:scale-105 dramatic-shadow uppercase">
+                <button class="retro-border bg-black text-white px-8 py-4 text-lg md:text-xl font-black tracking-widest hover:bg-gray-900 transition-all duration-300 hover:scale-105 dramatic-shadow uppercase">
                     TROVA SAPORI
                 </button>
-                <button class="retro-border bg-white text-black px-12 py-6 text-xl md:text-2xl font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 elegant-shadow uppercase">
+                <button class="retro-border bg-white text-black px-8 py-4 text-lg md:text-xl font-black tracking-widest hover:bg-gray-100 transition-all duration-300 hover:scale-105 elegant-shadow uppercase">
                     SCOPRI TUTTO
                 </button>
             </div>
@@ -388,46 +393,46 @@
         </div>
 
         <!-- Enhanced Floating Elements -->
-        <div class="absolute top-10 left-10 float-intense">
+        <div class="hidden md:block absolute top-10 left-10 float-intense">
             <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center dramatic-shadow">
                 <span class="text-2xl text-white">🍷</span>
             </div>
         </div>
-        <div class="absolute top-20 right-10 float-intense" style="animation-delay: -2s;">
+        <div class="hidden md:block absolute top-20 right-10 float-intense" style="animation-delay: -2s;">
             <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center elegant-shadow retro-border">
                 <span class="text-xl">🧀</span>
             </div>
         </div>
-        <div class="absolute bottom-32 left-20 float-intense" style="animation-delay: -4s;">
+        <div class="hidden md:block absolute bottom-32 left-20 float-intense" style="animation-delay: -4s;">
             <div class="w-18 h-18 bg-black rounded-full flex items-center justify-center dramatic-shadow">
                 <span class="text-3xl text-white">🫒</span>
             </div>
         </div>
-        <div class="absolute bottom-10 right-20 float-intense" style="animation-delay: -6s;">
+        <div class="hidden md:block absolute bottom-10 right-20 float-intense" style="animation-delay: -6s;">
             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center elegant-shadow retro-border">
                 <span class="text-lg">🍯</span>
             </div>
         </div>
         
         <!-- Corner Decorations -->
-        <div class="absolute top-0 left-0 w-32 h-32 bg-black transform rotate-45 -translate-x-16 -translate-y-16"></div>
-        <div class="absolute top-0 right-0 w-24 h-24 bg-gray-800 transform rotate-45 translate-x-12 -translate-y-12"></div>
-        <div class="absolute bottom-0 left-0 w-20 h-20 bg-gray-700 transform rotate-45 -translate-x-10 translate-y-10"></div>
-        <div class="absolute bottom-0 right-0 w-28 h-28 bg-black transform rotate-45 translate-x-14 translate-y-14"></div>
+        <div class="hidden md:block absolute top-0 left-0 w-32 h-32 bg-black transform rotate-45 -translate-x-16 -translate-y-16"></div>
+        <div class="hidden md:block absolute top-0 right-0 w-24 h-24 bg-gray-800 transform rotate-45 translate-x-12 -translate-y-12"></div>
+        <div class="hidden md:block absolute bottom-0 left-0 w-20 h-20 bg-gray-700 transform rotate-45 -translate-x-10 translate-y-10"></div>
+        <div class="hidden md:block absolute bottom-0 right-0 w-28 h-28 bg-black transform rotate-45 translate-x-14 translate-y-14"></div>
     </section>
 
     <!-- Bold Statement Section -->
-    <section class="py-40 bg-black text-white relative overflow-hidden">
+    <section class="py-20 md:py-40 bg-black text-white relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-none tracking-tighter">
+                <div class="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 leading-none tracking-tighter">
                     È SEMPLICE.
                 </div>
-                <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-12 leading-none tracking-tighter">
+                <div class="text-3xl md:text-5xl lg:text-6xl font-black mb-8 md:mb-12 leading-none tracking-tighter">
                     È <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">AUTENTICO</span>.
                 </div>
-                <div class="text-xl md:text-2xl font-bold text-gray-300 max-w-3xl mx-auto leading-tight">
-                    Ogni prodotto che selezioniamo ha un'anima, una storia,<br/>
+                <div class="text-lg md:text-2xl font-bold text-gray-300 max-w-3xl mx-auto leading-tight px-4">
+                    Ogni prodotto che selezioniamo ha un'anima, una storia,<br class="hidden md:block"/>
                     una tradizione che si tramanda da generazioni.
                 </div>
             </div>
@@ -441,15 +446,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-40 bg-white relative overflow-hidden bg-pattern">
+    <section id="about" class="py-20 md:py-40 bg-white relative overflow-hidden bg-pattern">
         <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-32 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
                 <div class="relative">
-                    <div class="text-[8rem] md:text-[10rem] font-black text-gray-100 leading-none mb-8 absolute -top-10 -left-5">
+                    <div class="text-[4rem] md:text-[8rem] lg:text-[10rem] font-black text-gray-100 leading-none mb-8 absolute -top-5 md:-top-10 -left-2 md:-left-5">
                         1950
                     </div>
-                    <div class="relative z-10 pt-24">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-none tracking-tighter">
+                    <div class="relative z-10 pt-16 md:pt-24">
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-black mb-6 md:mb-8 leading-none tracking-tighter">
                             LA NOSTRA<br/>
                             STORIA
                         </h2>
@@ -468,19 +473,19 @@
                     </div>
                 </div>
                 
-                <div class="space-y-16">
-                    <div class="retro-border bg-white p-12 dramatic-shadow">
-                        <div class="text-6xl mb-6">🏛️</div>
-                        <h3 class="text-3xl font-black text-black mb-6 uppercase tracking-wider">DOVE TUTTO INIZIÒ</h3>
+                <div class="space-y-12 md:space-y-16">
+                    <div class="retro-border bg-white p-6 md:p-12 dramatic-shadow">
+                        <div class="text-4xl md:text-6xl mb-4 md:mb-6">🏛️</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-black mb-4 md:mb-6 uppercase tracking-wider">DOVE TUTTO INIZIÒ</h3>
                         <p class="text-lg text-gray-600 font-medium leading-relaxed">
                             Nel 1950, nel cuore di Roma, Nonno Giuseppe apre la prima bottega di prodotti tipici. 
                             La filosofia era semplice: solo prodotti di altissima qualità, selezionati personalmente.
                         </p>
                     </div>
                     
-                    <div class="retro-border bg-black text-white p-12 dramatic-shadow">
-                        <div class="text-6xl mb-6">🌟</div>
-                        <h3 class="text-3xl font-black mb-6 uppercase tracking-wider">OGGI</h3>
+                    <div class="retro-border bg-black text-white p-6 md:p-12 dramatic-shadow">
+                        <div class="text-4xl md:text-6xl mb-4 md:mb-6">🌟</div>
+                        <h3 class="text-2xl md:text-3xl font-black mb-4 md:mb-6 uppercase tracking-wider">OGGI</h3>
                         <p class="text-lg text-gray-300 font-medium leading-relaxed">
                             Tre generazioni dopo, continuiamo la tradizione con lo stesso amore e dedizione, 
                             portando l'eccellenza italiana in tutto il mondo attraverso la nostra piattaforma digitale.
@@ -496,45 +501,45 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-32 bg-black text-white">
+    <section class="py-16 md:py-32 bg-black text-white">
         <div class="container mx-auto px-6">
             <!-- Repeating text background -->
-            <div class="absolute inset-0 overflow-hidden opacity-5">
+            <div class="absolute inset-0 overflow-hidden opacity-5 hidden md:block">
                 <div class="whitespace-nowrap text-white text-8xl font-black absolute top-1/4 animate-marquee">
                     70+ ANNI • 500+ PRODOTTI • 100% QUALITÀ • 70+ ANNI • 500+ PRODOTTI • 100% QUALITÀ •
                 </div>
             </div>
             
             <div class="relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-none">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black mb-4 md:mb-6 leading-none">
                         I NUMERI<br/>
                         <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">PARLANO</span>
                     </h2>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <div class="retro-border bg-white text-black p-8 hover-lift">
-                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
+                    <div class="retro-border bg-white text-black p-6 md:p-8 hover-lift">
+                        <div class="text-4xl md:text-6xl font-black mb-3 md:mb-4 leading-none">
                             70+
                         </div>
-                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                        <p class="text-base md:text-xl font-black uppercase tracking-wider">
                             ANNI DI<br/>ESPERIENZA
                         </p>
                     </div>
-                    <div class="retro-border bg-white text-black p-8 hover-lift">
-                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                    <div class="retro-border bg-white text-black p-6 md:p-8 hover-lift">
+                        <div class="text-4xl md:text-6xl font-black mb-3 md:mb-4 leading-none">
                             500+
                         </div>
-                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                        <p class="text-base md:text-xl font-black uppercase tracking-wider">
                             PRODOTTI<br/>SELEZIONATI
                         </p>
                     </div>
-                    <div class="retro-border bg-white text-black p-8 hover-lift">
-                        <div class="text-5xl md:text-6xl font-black mb-4 leading-none">
+                    <div class="retro-border bg-white text-black p-6 md:p-8 hover-lift">
+                        <div class="text-4xl md:text-6xl font-black mb-3 md:mb-4 leading-none">
                             100%
                         </div>
-                        <p class="text-lg md:text-xl font-black uppercase tracking-wider">
+                        <p class="text-base md:text-xl font-black uppercase tracking-wider">
                             QUALITÀ<br/>GARANTITA
                         </p>
                     </div>
@@ -544,14 +549,14 @@
     </section>
 
     <!-- Transition Section -->
-    <section class="py-40 bg-white relative overflow-hidden">
+    <section class="py-20 md:py-40 bg-white relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <div class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-none tracking-tighter">
+                <div class="text-3xl md:text-5xl lg:text-6xl font-black text-black mb-6 md:mb-8 leading-none tracking-tighter">
                     COSA<br/>
                     OFFRIAMO?
                 </div>
-                <div class="text-xl md:text-2xl font-bold text-gray-600 max-w-4xl mx-auto leading-tight mb-12">
+                <div class="text-lg md:text-2xl font-bold text-gray-600 max-w-4xl mx-auto leading-tight mb-8 md:mb-12 px-4">
                     Tre categorie principali.<br/>
                     Centinaia di prodotti selezionati.<br/>
                     <span class="text-black">Un'unica garanzia: l'eccellenza.</span>
@@ -560,15 +565,15 @@
         </div>
         
         <!-- Large Background Text -->
-        <div class="absolute inset-0 flex items-center justify-center overflow-hidden opacity-5">
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden opacity-5 hidden md:block">
             <div class="text-[12rem] font-black text-black">🇮🇹</div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-40 bg-black text-white relative overflow-hidden">
+    <section id="products" class="py-20 md:py-40 bg-black text-white relative overflow-hidden">
         <!-- Rotating background text -->
-        <div class="absolute inset-0 overflow-hidden opacity-10">
+        <div class="absolute inset-0 overflow-hidden opacity-10 hidden md:block">
             <div class="whitespace-nowrap text-white text-6xl font-black absolute top-10 animate-marquee">
                 🍷 VINI PREGIATI • 🧀 FORMAGGI ARTIGIANALI • 🫒 OLIO EXTRAVERGINE • 🍯 MIELE BIOLOGICO •
             </div>
@@ -582,12 +587,12 @@
         
         <div class="container mx-auto px-6 relative z-10">
             <!-- Products Grid -->
-            <div class="space-y-40">
+            <div class="space-y-20 md:space-y-40">
                 <!-- Wine Category -->
-                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
                     <div class="order-2 lg:order-1">
-                        <div class="text-6xl mb-6 leading-none">🍷</div>
-                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                        <div class="text-4xl md:text-6xl mb-4 md:mb-6 leading-none">🍷</div>
+                        <h3 class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 leading-none tracking-tighter">
                             VINI<br/>
                             <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">PREGIATI</span>
                         </h3>
@@ -608,22 +613,22 @@
                         </button>
                     </div>
                     <div class="order-1 lg:order-2 relative">
-                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
-                            <div class="text-8xl text-black opacity-80 float-intense">🍷</div>
+                        <div class="retro-border bg-white h-64 md:h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-6xl md:text-8xl text-black opacity-80 float-intense">🍷</div>
                         </div>
                     </div>
                 </div>
 
                                 <!-- Cheese Category -->
-                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
                     <div class="relative">
-                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
-                            <div class="text-8xl text-black opacity-80 float-intense" style="animation-delay: -2s;">🧀</div>
+                        <div class="retro-border bg-white h-64 md:h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-6xl md:text-8xl text-black opacity-80 float-intense" style="animation-delay: -2s;">🧀</div>
                         </div>
                     </div>
                     <div>
-                        <div class="text-6xl mb-6 leading-none">🧀</div>
-                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                        <div class="text-4xl md:text-6xl mb-4 md:mb-6 leading-none">🧀</div>
+                        <h3 class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 leading-none tracking-tighter">
                             FORMAGGI<br/>
                             <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">ARTIGIANALI</span>
                         </h3>
@@ -646,10 +651,10 @@
                 </div>
 
                 <!-- Oil Category -->
-                <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
                     <div class="order-2 lg:order-1">
-                        <div class="text-6xl mb-6 leading-none">🫒</div>
-                        <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none tracking-tighter">
+                        <div class="text-4xl md:text-6xl mb-4 md:mb-6 leading-none">🫒</div>
+                        <h3 class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 leading-none tracking-tighter">
                             OLIO<br/>
                             <span class="text-outline" style="-webkit-text-stroke: 2px white; color: transparent;">EXTRAVERGINE</span>
                         </h3>
@@ -670,8 +675,8 @@
                         </button>
                     </div>
                     <div class="order-1 lg:order-2 relative">
-                        <div class="retro-border bg-white h-80 flex items-center justify-center dramatic-shadow">
-                            <div class="text-8xl text-black opacity-80 float-intense" style="animation-delay: -4s;">🫒</div>
+                        <div class="retro-border bg-white h-64 md:h-80 flex items-center justify-center dramatic-shadow">
+                            <div class="text-6xl md:text-8xl text-black opacity-80 float-intense" style="animation-delay: -4s;">🫒</div>
                         </div>
                     </div>
                 </div>
